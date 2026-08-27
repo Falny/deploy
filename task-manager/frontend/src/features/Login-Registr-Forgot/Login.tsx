@@ -46,7 +46,9 @@ export default function Login() {
 		localStorage.setItem('howIsLogin', 'true')
 
 		const client_id = '0a4df42f456a4e7a9b361cae0a96dfd1'
-		const redirect_uri = encodeURIComponent('tatipati')
+		const redirect_uri = encodeURIComponent(
+			'https://portfollio-gab.ru/task-manager/tatipati',
+		)
 
 		const YAuth = `https://oauth.yandex.ru/authorize?response_type=code&client_id=${client_id}&redirect_uri=${redirect_uri}`
 

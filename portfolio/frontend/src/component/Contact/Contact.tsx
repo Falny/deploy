@@ -62,7 +62,7 @@ export default function Contact({
 			}
 
 			const stringSend = `Имя: ${name}. \n Телефон: ${tel}. \n Что хочу: ${text}.`
-			const request = await fetch('http://localhost:8090/form', {
+			const request = await fetch('/portfolio-api/form', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
