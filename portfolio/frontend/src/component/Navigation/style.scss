@@ -1,0 +1,165 @@
+@use '../../App.scss' as *;
+
+.burger {
+	display: none;
+
+	@media (max-width: 520px) {
+		display: flex;
+		flex-direction: column;
+		gap: 3px;
+		cursor: pointer;
+		z-index: 100;
+	}
+}
+
+.burger-open {
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+	z-index: 100;
+
+	.burger-item {
+		display: block;
+		width: 20px;
+		height: 2px;
+		background-color: $orangeColor;
+		border-radius: 5px;
+	}
+}
+
+.burger-close {
+	position: absolute;
+	top: 4rem;
+	right: 4rem;
+	z-index: 1001;
+
+	.burger-item {
+		display: block;
+		width: 20px;
+		height: 2px;
+		background-color: $orangeColor;
+		border-radius: 5px;
+
+		&:first-child {
+			transform: rotate(45deg);
+			transition: all 0.3s;
+		}
+
+		&:nth-child(2) {
+			display: none;
+		}
+		&:last-child {
+			transform: translate(0, -5px) rotate(-45deg);
+			transition: all 0.3s;
+		}
+	}
+}
+
+.nav-open {
+	border: 1px solid $orangeColor;
+	border-radius: 15px;
+	margin: 20px auto;
+	width: 90%;
+	height: 95%;
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+	background-color: rgba($color: #000000, $alpha: 0.9);
+	position: absolute;
+	inset: 0;
+	z-index: 1000;
+	transition: all 0.3s;
+
+	.nav-container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.nav-item {
+			color: $orangeColor;
+			text-transform: uppercase;
+		}
+
+		.nav-item + .nav-item {
+			margin-top: 15px;
+		}
+
+		.nav-back_burger {
+			display: none;
+
+			@media (max-width: 520px) {
+				display: block;
+				bottom: 0;
+				right: 0;
+				filter: blur(6rem);
+				z-index: 1001;
+			}
+		}
+	}
+}
+
+.nav {
+	width: 80%;
+	border: 1px solid $orangeColor;
+	border-radius: 15px;
+
+	@media (max-width: 950px) {
+		width: 100%;
+	}
+
+	@media (max-width: 520px) {
+		transform: translateX(-100%);
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s;
+	}
+
+	.nav-container {
+		padding: 10px 15px;
+
+		.nav-list {
+			display: flex;
+			justify-content: end;
+			gap: 8rem;
+			margin-right: 10rem;
+
+			@media (max-width: 1400px) {
+				gap: 5rem;
+				margin-right: 5rem;
+			}
+
+			@media (max-width: 1400px) {
+				gap: 2rem;
+				margin-right: 0;
+			}
+			@media (max-width: 650px) {
+				gap: 1rem;
+			}
+
+			@media (max-width: 520px) {
+				display: none;
+			}
+
+			.nav-item {
+				color: $orangeColor;
+				padding: 0 10px;
+				cursor: pointer;
+				border-left: 1px solid transparent;
+				border-right: 1px solid transparent;
+				text-transform: uppercase;
+				transition: all 0.3s;
+
+				&:hover {
+					border-left: 1px solid $orangeColor;
+					border-right: 1px solid $orangeColor;
+					border-radius: 3px;
+					transition: all 0.3s;
+				}
+			}
+		}
+	}
+}

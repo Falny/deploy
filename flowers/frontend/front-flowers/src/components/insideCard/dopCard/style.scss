@@ -1,0 +1,234 @@
+@use "../../../index.scss" as *;
+
+.block-delivery-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  @include colorPink;
+
+  @media (max-width: 950px){
+    font-size: 17px;
+  }
+  @media (max-width: 600px){
+    font-size: 15px;
+  }
+}
+
+.green-text {
+  @include colorGreen;
+}
+
+.block-delivery-title-position {
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.dop-cart {
+  margin-top: 80px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  .dop-order-info {
+    .do-info_block {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 45px;
+
+      @media (max-width: 950px) {
+        flex-wrap: wrap;
+      }
+
+      .do-info_item {
+        border-radius: 30px;
+        width: 255px;
+        padding: 35px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        position: relative;
+        @include shadowZeroTwo;
+
+        @media (max-width: 950px) {
+          width: 180px;
+        }
+
+        .do-info_item-circle {
+          position: absolute;
+          background-color: #000;
+          border-radius: 50%;
+          display: block;
+          top: -5%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 30px;
+          height: 30px;
+        }
+
+        .do-info_item-title {
+          font-size: 16px;
+          @include colorGreen;
+        }
+
+        .do-info_item-text {
+          font-size: 14px;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}
+
+.form-toogle {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  .block-toggle {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    .block-toggle_item {
+      font-weight: 700;
+      font-size: 20px;
+      padding: 10px 82px;
+      border-bottom: 1px solid #43ffd2;
+      @include colorGreen;
+
+      @media (max-width: 950px) {
+        font-size: 17px;
+      }
+      @media (max-width: 600px) {
+        font-size: 15px;
+      }
+      @media (max-width: 465px) {
+        padding: 10px 40px;
+      }
+    }
+
+    .bt-inactive {
+      border-bottom: 1px solid #555555;
+      color: #555555;
+    }
+  }
+
+  .block-delivery-info {
+    margin-top: 60px;
+
+    @media (max-width: 600px) {
+      margin-top: 30px;
+    }
+
+    .block-delivery-item + .block-delivery-item {
+      margin-top: 10px;
+
+    }
+
+    .block-delivery-item {
+      font-size: 17px;
+      font-weight: 200;
+      list-style: disc;
+
+      @media (max-width: 950px) {
+        font-size: 15px;
+      }
+      @media (max-width: 600px) {
+        font-size: 13px;
+      }
+    }
+
+    li::marker {
+      font-size: 10px;
+    }
+
+    .block-delivery-text {
+      font-size: 17px;
+      font-weight: 200;
+
+      @media (max-width: 950px) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .block-toggle-freeback {
+    margin-top: 60px;
+    font-weight: 300;
+    text-transform: initial;
+
+    .freeback {
+      font-size: 15px;
+    }
+
+    .freeback-info {
+      margin: 60px 0 20px;
+
+      @media (max-width: 600px) {
+        margin: 20px 0;
+      }
+
+      .fi-title {
+        font-size: 17px;
+        text-transform: uppercase;
+        @include colorGreen;
+      }
+
+      .fi-desc {
+        font-size: 15px;
+      }
+    }
+
+    .freeback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 540px;
+
+      .label-form {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 15px;
+      }
+
+      .form-big,
+      .form-mini {
+        background-color: transparent;
+        border: 1px solid #555555;
+        padding: 20px;
+        resize: none;
+        height: 180px;
+        letter-spacing: 1px;
+        @include familyOswald;
+
+        &::placeholder {
+          text-transform: uppercase;
+        }
+      }
+
+      .form-mini {
+        height: 60px;
+        padding: 0;
+        padding-left: 20px;
+      }
+
+      .form-button {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .form-btn {
+          @include btn;
+        }
+
+        .form-copyright-text{
+            @include policy;
+        }
+      }
+    }
+  }
+}

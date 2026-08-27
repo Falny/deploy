@@ -1,0 +1,144 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+	text-decoration: none;
+	color: #fff;
+	border: none;
+	outline: none;
+	letter-spacing: 1px;
+	// outline: 1px solid red;
+	font-family: 'Tuffy';
+}
+
+// @font-face {
+// 	font-family: 'Press Start 2P';
+// 	src: url('./assets/font/PressStart2P-Regular.ttf') format('truetype');
+// }
+
+@font-face {
+	font-family: 'Tuffy';
+	src: url('./assets/font/Tuffy-Regular.ttf') format('truetype');
+}
+
+$blackColor: #161316;
+$orangeColor: #ff6d29;
+
+.arrow-up {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.arrow-up_show {
+	opacity: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	color: $orangeColor;
+	font-size: 30px;
+	font-weight: 700;
+	transition: all 0.3s;
+}
+
+.arrow-up_hidden {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	transition: all 0.3s;
+}
+
+.container {
+	padding: 30px 25px;
+
+	@media (max-width: 520px) {
+		padding: 30px 10px;
+	}
+}
+
+.navigation {
+	background-color: $blackColor;
+}
+
+.text-size_p {
+	font-size: 21px;
+
+	@media (max-width: 900px) {
+		font-size: 19px;
+	}
+	@media (max-width: 700px) {
+		font-size: 17px;
+	}
+}
+
+.size {
+	font-size: 19px;
+
+	@media (max-width: 900px) {
+		font-size: 17px;
+	}
+	@media (max-width: 600px) {
+		font-size: 15px;
+	}
+}
+
+._title {
+	position: relative;
+	color: $orangeColor;
+	width: fit-content;
+	text-transform: uppercase;
+	font-size: 25px;
+
+	@media (max-width: 600px) {
+		font-size: 20px;
+	}
+
+	.arrow-circle {
+		position: absolute;
+		top: 50%;
+		left: -6.1rem;
+		transform: translateY(-50%);
+		display: block;
+		height: 2px;
+		width: 100px;
+		background-color: $orangeColor;
+		border-radius: 5px;
+
+		@media (max-width: 600px) {
+			width: 50px;
+			left: -3rem;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, -50%);
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: $orangeColor;
+		}
+	}
+}
+
+.back {
+	position: absolute;
+	background-color: $orangeColor;
+	filter: blur(5rem);
+	width: 9rem;
+	height: 25rem;
+
+	@media (max-width: 900px) {
+		height: 15rem;
+	}
+}

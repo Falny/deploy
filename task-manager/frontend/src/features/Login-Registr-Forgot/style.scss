@@ -1,0 +1,108 @@
+@use '../../app/App.scss' as *;
+
+.common-form-log {
+	position: relative;
+
+	.common-form-form {
+		.common-form-block + .common-form-block {
+			margin-top: 20px;
+		}
+
+		.common-form-block {
+			position: relative;
+		}
+
+		.common-form-input {
+			border: none;
+			width: 20rem;
+			height: 2.8rem;
+			padding-left: 15px;
+			background-color: transparent;
+			border-bottom: 1px solid $mainWhite;
+			@include mainColor;
+			@include text;
+			@include usualTextSize;
+
+			&::placeholder {
+				color: $mainWhite;
+			}
+
+			@media (max-width: 400px) {
+				width: 15rem;
+				height: 2.4rem;
+			}
+		}
+
+		.common-form-label {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 16px;
+			transition: all 0.3s ease;
+			cursor: pointer;
+		}
+
+		.common-form_img > * {
+			@include mainColor;
+		}
+
+		.common-form_img {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0.5rem;
+		}
+	}
+	.common-form-btn {
+		background-color: transparent;
+		border: 1px solid $mainWhite;
+		margin-top: 15px;
+		border-radius: 10px;
+		width: 100%;
+		height: 2.8rem;
+		cursor: pointer;
+		@include text;
+		@include middleTextSize;
+		transition: all 0.3s ease;
+
+		&:hover {
+			@include mainBackgroundHover;
+			transition: all 0.3s ease;
+			border: transparent;
+			color: $mainWhite;
+		}
+	}
+
+	.block-auth {
+		position: absolute;
+		left: -1.2rem;
+		bottom: -7rem;
+		width: 100%;
+
+		.logout-yandex {
+			transition: all 0.3s;
+
+			&:hover {
+				background-color: $paleOldRoseColor;
+				transition: all 0.3s;
+			}
+		}
+
+		.logout {
+			@include backgroundBlur;
+			border: none;
+			width: 50%;
+			border-radius: 0.5rem;
+			padding: 10px;
+			cursor: pointer;
+
+			.icon-yandex {
+				@include headerTextSize;
+				background-color: $paleOldRoseColor;
+				padding: 5px 10px;
+				border-radius: 50%;
+			}
+		}
+	}
+}

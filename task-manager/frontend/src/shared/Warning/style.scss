@@ -1,0 +1,52 @@
+@use '../../app/App.scss' as *;
+
+.active {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	transition: all 0.3s;
+}
+
+.inactive {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(100%);
+	transition: all 0.3s;
+}
+
+.warning {
+	// background-color: #8eb69b;
+	padding: 25px 30px;
+	border-radius: 10px;
+	@include middleTextSize;
+	width: fit-content;
+
+	.warning-text {
+		color: #fff;
+		padding-right: 0.7rem;
+	}
+
+	.warning-close_block {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		cursor: pointer;
+		padding: 10px;
+
+		.warning-close {
+			display: block;
+			height: 10px;
+			width: 1px;
+			border-radius: 10px;
+			background-color: #fff;
+		}
+
+		.warning-close:first-child {
+			rotate: 45deg;
+		}
+		.warning-close:last-child {
+			rotate: -45deg;
+			transform: translate(7px, -7px);
+		}
+	}
+}

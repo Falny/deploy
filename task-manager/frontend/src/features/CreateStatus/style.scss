@@ -1,0 +1,56 @@
+@use '../../app/App.scss' as *;
+
+.create-status {
+	@include backgroundBlur;
+	@include displayColumn;
+	position: fixed;
+	inset: 0;
+
+	.create-status_block {
+		width: 300px;
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.9);
+		border-radius: 20px;
+		@include displayColumnAIStart;
+		gap: 20px;
+
+		.create-status_label {
+			@include displayColumnAIStart;
+			gap: 10px;
+			color: $mainColorBlack;
+			@include text;
+			@include usualTextSize;
+
+			.create-status_input {
+				height: 50px;
+				border-radius: 10px;
+				border: 1px solid $colorForBorder;
+				background-color: rgba(255, 255, 255, 0.9);
+				padding-left: 10px;
+				color: $mainColorBlack;
+				@include text;
+				@include usualTextSize;
+			}
+		}
+
+		.color-status {
+			flex-direction: row;
+			justify-content: space-between;
+			position: relative;
+
+			.create-status_color {
+				width: 5rem;
+				height: 2rem;
+				border-radius: 2rem;
+			}
+
+			.create-status_choice-color {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+	}
+}

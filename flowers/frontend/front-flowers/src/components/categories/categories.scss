@@ -1,0 +1,24 @@
+@use '../../index.scss' as *;
+
+.c_category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .c_category-item {
+      text-transform: uppercase;
+      background-color: transparent;
+      padding: 10px 15px;
+      border-radius: 25px;
+      border: 1px solid #fff;
+      transition: all 0.3s;
+      cursor: pointer;
+      @include familyOswald;
+
+      &.active {
+        color: #000;
+        border: 1px solid #43ffd2;
+        @include backGreen;
+      }
+    }
+  }

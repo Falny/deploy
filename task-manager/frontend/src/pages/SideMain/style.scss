@@ -1,0 +1,178 @@
+@use '../../app/App.scss' as *;
+
+.sidemain {
+	position: relative;
+
+	@media (max-width: 1135px) {
+		cursor: pointer;
+	}
+
+	.side {
+		height: $mainHeight;
+		@include backgroundBlur;
+		@include BorderRadiusMainContainers;
+
+		@media (max-width: 1135px) {
+			width: 75px;
+		}
+		@media (max-width: 600px) {
+			height: 10vh;
+			width: 100%;
+		}
+
+		.sidemain-list {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			@media (max-width: 600px) {
+				height: min-content;
+			}
+
+			.sidemain-item {
+				margin-bottom: 15px;
+				@include text;
+				@include usualTextSize;
+
+				@media (max-width: 600px) {
+					display: none;
+				}
+			}
+
+			.sidemain-list_nested-list {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+
+				@media (max-width: 600px) {
+					width: 80%;
+					flex-direction: row;
+					justify-content: space-between;
+					gap: 0;
+				}
+
+				@media (max-width: 400px) {
+					width: 70%;
+				}
+
+				.sidemain-item_nested-item {
+					position: relative;
+
+					.count-note {
+						position: absolute;
+						top: -0.6rem;
+						right: 0;
+						z-index: 10;
+						padding: 2px 6px;
+						@include miniTextSize;
+						background-color: $paleOldRoseColor;
+						border-radius: 50%;
+						color: #fff;
+					}
+
+					.sidemain-item_link {
+						display: flex;
+						align-items: center;
+						gap: 10px;
+						padding: 10px 5px;
+						transition: all 0.3s;
+
+						&:hover {
+							background-color: $mainColorPink;
+							border-radius: 12px;
+							transition: all 0.3s;
+						}
+
+						@media (max-width: 600px) {
+							justify-content: center;
+							gap: 0;
+						}
+
+						.sidemain-text {
+							@include text;
+							@include usualTextSize;
+						}
+
+						.text-inactive {
+							@media (max-width: 1135px) {
+								margin: 0;
+								width: 0;
+								opacity: 0;
+								visibility: hidden;
+							}
+						}
+
+						.text-active {
+							@media (max-width: 1135px) {
+								opacity: 1;
+								visibility: visible;
+								transition: all 0.6s;
+							}
+						}
+					}
+					.sidemain-li-hover {
+						@include mainBackground;
+						overflow: hidden;
+						border-radius: 12px;
+
+						&::after {
+							content: '';
+							position: absolute;
+							height: 60%;
+							width: 4px;
+							right: 0;
+							top: 50%;
+							transform: translateY(-50%);
+							border-radius: 5px 2px 2px 5px;
+							filter: blur(0.6px);
+							@include backCircle4;
+
+							@media (max-width: 600px) {
+								width: 60%;
+								height: 4px;
+								top: 1px;
+								left: 50%;
+								transform: translateX(-50%);
+							}
+						}
+
+						&::before {
+							content: '';
+							position: absolute;
+							height: 30px;
+							width: 30px;
+							right: -5px;
+							top: 50%;
+							transform: translateY(-50%);
+							border-radius: 50%;
+							filter: blur(20px);
+							@include backCircle4;
+
+							@media (max-width: 600px) {
+								top: 0;
+								left: 50%;
+								transform: translateX(-50%);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.middle-side-active {
+		@media (max-width: 1135px) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 250px;
+			z-index: 1000;
+			@include backgroundBlur;
+			transition: all 0.3s;
+		}
+
+		@media (max-width: 600px) {
+			display: none;
+		}
+	}
+}

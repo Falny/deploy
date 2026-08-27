@@ -1,0 +1,87 @@
+@use "../../App.scss" as *;
+
+.form-field-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 10px;
+
+  .form-selected {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+
+    .form-text-select {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 5px;
+      border-radius: 4px;
+      @include LightGreen;
+
+      .delete-icon {
+        width: 15px;
+        height: 15px;
+        @include textCrey;
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    cursor: pointer;
+    @include textCrey;
+  }
+}
+.add-form-field-select {
+  position: relative;
+
+  .form-select {
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include colorGreen;
+
+    .form-select-item {
+      text-transform: capitalize;
+      border-radius: 5px;
+      padding: 5px;
+      font-weight: 300;
+      cursor: pointer;
+      transition: all 0.3s;
+      @include LightGreen;
+
+      &:hover {
+        @include colorGreen;
+      }
+    }
+
+    .form-select-item + .form-select-item {
+      margin-top: 5px;
+    }
+  }
+
+  .form-select-active {
+    display: flex;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s;
+    position: absolute;
+    bottom: 0;
+    right: -110%;
+    max-height: 150px;
+    overflow-y: scroll;
+  }
+}

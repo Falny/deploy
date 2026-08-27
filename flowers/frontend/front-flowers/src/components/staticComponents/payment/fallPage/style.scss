@@ -1,0 +1,170 @@
+@use "../../../../index.scss" as *;
+
+.fallpage {
+  background-image: url("../../../../assets/payment/fallpage-big-list.png"),
+    url("../../../../assets//payment/fallpage-list1.png"),
+    url("../../../../assets//payment/fallpage-list2.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center left, center right, center right;
+  background-size: 60% 100%, auto, auto;
+  min-height: 90vh;
+  position: relative;
+
+  @media (max-width: 1200px) {
+    min-height: 70vh;
+  }
+
+  @media (max-width: 1000px) {
+    min-height: 50vh;
+  }
+
+  @media (max-width: 600px) {
+    min-height: 40vh;
+  }
+
+  @media (max-width: 450px) {
+    min-height: 30vh;
+    background-size: 60% 100%, 0, 0;
+  }
+  @media (max-width: 350px) {
+    min-height: 25vh;
+  }
+
+  .fallpage-container {
+    @include displayColumn;
+
+    .fallpage-numbers {
+      .fp-common-num {
+        font-size: 600px;
+        background: linear-gradient(#163d8f, #163d8f, #4f6cab, #b6cdff);
+        background-clip: text;
+        color: transparent;
+        height: fit-content;
+        @include familyCormorant;
+
+        @media (max-width: 1200px) {
+          font-size: 400px;
+        }
+
+        @media (max-width: 600px) {
+          font-size: 200px;
+        }
+      }
+
+      .fp_one {
+        position: absolute;
+        z-index: -1;
+        top: -20%;
+        left: 5%;
+
+        @media (max-width: 600px) {
+          top: -20%;
+          left: 5%;
+        }
+
+        @media (max-width: 380px) {
+          top: -20%;
+          left: 0%;
+        }
+      }
+
+      .fp_two {
+        position: absolute;
+        z-index: -1;
+        top: -30%;
+        left: 34%;
+
+        @media (max-width: 400px) {
+          top: -40%;
+          left: 40%;
+        }
+      }
+
+      .fp_zero {
+        position: absolute;
+        left: 20%;
+        top: 0;
+
+        @media (max-width: 400px) {
+          left: 25%;
+        }
+      }
+
+      .fallpage-signa {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+
+        @media (max-width: 380px) {
+          scale: 0.6;
+        }
+      }
+    }
+
+    .fallpage-text {
+      position: absolute;
+      right: 30%;
+      bottom: 20%;
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      gap: 20px;
+      text-transform: uppercase;
+
+      @media (max-width: 800px) {
+        right: 15%;
+        bottom: 0;
+      }
+      @media (max-width: 600px) {
+        font-size: 16px;
+        gap: 10px;
+      }
+      @media (max-width: 400px) {
+        font-size: 13px;
+      }
+
+      .fp_to-main {
+        text-decoration: underline;
+        @include colorGreen;
+      }
+    }
+  }
+
+  .common {
+    position: absolute;
+    z-index: -10;
+  }
+
+  .mini-light-blue {
+    width: 300px;
+    height: 200px;
+    filter: blur(80px);
+    background-color: #163d8f;
+  }
+
+  .light-blue {
+    width: 400px;
+    height: 200px;
+    filter: blur(80px);
+    background-color: #163d8f;
+  }
+
+  .fp-light-blue-top {
+    top: -10%;
+    right: 0;
+  }
+
+  .fp-light-blue-bottom-left {
+    bottom: 10%;
+    right: 0;
+    rotate: -45deg;
+  }
+
+  .fp-light-blue-bottom-right {
+    bottom: 10%;
+    left: -10%;
+    rotate: -45deg;
+  }
+}

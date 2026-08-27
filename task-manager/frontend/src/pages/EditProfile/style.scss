@@ -1,0 +1,139 @@
+@use '../../app/App.scss' as *;
+
+.edit-profile {
+	@include backgroundBlur;
+	backdrop-filter: blur(5px);
+	@include displayColumn;
+	position: fixed;
+	inset: 0;
+
+	.edit-profile_block {
+		@include displayAIStart;
+		justify-content: start;
+		background-color: $mainWhite;
+		border-radius: 15px;
+		position: relative;
+		width: 60vh;
+		height: fit-content;
+		gap: 30px;
+
+		@media (max-width: 700px) {
+			width: 70vw;
+		}
+		@media (max-width: 500px) {
+			width: 90vw;
+		}
+
+		.edit-profile_close {
+			position: absolute;
+			top: 0.5rem;
+			right: 0.5rem;
+			cursor: pointer;
+		}
+
+		.edit-profile_label-avatar {
+			position: relative;
+			border-radius: 50%;
+			background-color: $palePinkColor;
+			width: 70px;
+			height: 70px;
+			cursor: pointer;
+
+			&:hover::after {
+				content: '+';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 2.5rem;
+				color: $paleSlateColor;
+			}
+
+			&:hover > * {
+				display: none;
+			}
+
+			.edit-profile_img {
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+			}
+
+			.edit-profile_avatar {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.edit-profile_avatar {
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+
+		.edit-profile-field {
+			@include displayAIStart;
+			justify-content: start;
+			gap: 20px;
+			width: 100%;
+
+			.edit-profile_form-label {
+				@include text;
+				@include usualTextSize;
+				@include displayAIStart;
+				justify-content: start;
+				position: relative;
+				width: 100%;
+				gap: 5px;
+				color: $mainColorBlack;
+
+				.edit-profile_form-input {
+					border: none;
+					border-radius: 10px;
+					background-color: $backgroundField;
+					height: 30px;
+					width: 100%;
+					padding-left: 10px;
+					@include text;
+					@include usualTextSize;
+					color: $mainColorBlack;
+				}
+
+				.edit-profile_label-close {
+					display: inline-block;
+					position: absolute;
+					top: 75%;
+					right: 0;
+					transform: translateY(-50%);
+					border: none;
+					cursor: pointer;
+
+					&::after {
+						content: '';
+						height: 15px;
+						background-color: $paleSlateColor;
+					}
+					&::before {
+						content: '';
+						height: 15px;
+						background-color: $paleSlateColor;
+					}
+				}
+			}
+		}
+
+		.edit-profile_btn {
+			padding: 10px 5px;
+			border: 1px solid $paleGreenColor;
+			color: $paleGreenColor;
+			transition: all 0.3s;
+
+			&:hover {
+				background-color: $paleGreenColor;
+				color: $mainWhite;
+				transition: all 0.3s;
+			}
+		}
+	}
+}

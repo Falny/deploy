@@ -1,0 +1,33 @@
+@use "../../App.scss" as *;
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  
+
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 300;
+    letter-spacing: 1px;
+    @include colorGreen;
+
+    .product-img{
+      width: 50px;
+      height: 50px;
+    }
+
+    .item-link {
+      color: #000;
+      display: flex;
+      gap: 10px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+  }
+}

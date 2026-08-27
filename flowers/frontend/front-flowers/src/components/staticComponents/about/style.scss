@@ -1,0 +1,182 @@
+@use "../../../index.scss" as *;
+
+.about {
+  font-weight: 300;
+  text-transform: uppercase;
+  background-image: url('../../../assets/about/yellow-top-right.png'), url('../../../assets/about/yellow-top-left.png'), url('../../../assets/about/yellow-bottom.png');
+  background-repeat: no-repeat;
+  background-position: top right, top left, right bottom;
+  background-size: auto, auto, auto;
+  position: relative;
+
+  @media (max-width: 1000px) {
+    background-size: 50% 20%, 50% 30%, auto;
+  }
+  @media (max-width: 600px) {
+    background-size: 70% 20%, 50% 30%, contain;
+  }
+  @media (max-width: 400px) {
+    background-size: contain, 0, contain;
+  }
+
+  .about-container {
+    margin-left: 90px;
+
+    @media (max-width: 500px) {
+      margin: 0;
+    }
+
+    .ac-title {
+      margin: 100px 0 10px;
+      font-size: 60px;
+      @include familyCormorant;
+      @include colorGreen;
+
+      @media (max-width: 800px) {
+        font-size: 40px;
+        margin: 50px 0 10px;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 30px;
+        margin: 30px 0 10px;
+      }
+
+    }
+
+    .ac-block {
+      margin-left: auto;
+      max-width: 600px;
+      font-size: 20px;
+      padding: 40px 20px;
+      border-radius: 0;
+      @include shadowZeroTwo;
+
+      @media (max-width: 800px) {
+        font-size: 17px;
+        max-width: 400px;
+      }
+      @media (max-width: 400px) {
+        padding: 20px;
+      }
+
+      .ac-block_title {
+        margin-bottom: 20px;
+      }
+
+      .ac-block_text {
+        text-transform: initial;
+      }
+    }
+
+    .ac-garantee-text {
+      font-size: 20px;
+      max-width: 800px;
+
+      @media (max-width: 800px) {
+        font-size: 17px;
+      }
+      @media (max-width: 600px) {
+        font-size: 14px;
+      }
+    }
+
+    .ac-list {
+      margin-left: auto;
+      max-width: 600px;
+
+      @media (max-width: 800px) {
+        max-width: 400px;
+      }
+      @media (max-width: 600px) {
+        font-size: 14px;
+      }
+
+      .ac-item {
+        list-style-type: disc;
+
+        &::marker {
+          font-size: 0.6rem;
+        }
+      }
+
+      .ac-item + .ac-item {
+        margin-top: 10px;
+      }
+    }
+  }
+  .about-text-option {
+    margin-top: 160px;
+    font-size: 60px;
+    line-height: 64px;
+    @include familyCormorant;
+
+    @media (max-width: 800px) {
+      font-size: 40px;
+      line-height: 50px;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 30px;
+      line-height: 30px;
+      margin-top: 50px;
+    }
+    @media (max-width: 400px) {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+
+  .about-text-quote {
+    font-size: 20px;
+    margin: 40px 0 0 190px;
+    max-width: 445px;
+
+    @media (max-width: 800px) {
+      font-size: 17px;
+    }
+    @media (max-width: 500px) {
+      font-size: 14px;
+      margin: 20px 0 0 70px;
+    }
+  }
+
+  .light-yellow{
+    width: 400px;
+    height: 400px;
+    background-color: #C8A156;
+    filter: blur(120px);
+    z-index: -1;
+  }
+
+  .about-light-yellow-top-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .about-light-yellow-top-right{
+    position: absolute;
+    top: 5%;
+    right: 15%;
+  }
+
+  .about-light-yellow-top-center{
+    position: absolute;
+    top: 20%;
+    right: 50%;
+  }
+
+  .about-light-yellow-bottom-left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .about-light-yellow-bottom-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

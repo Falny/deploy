@@ -1,0 +1,235 @@
+@use "../../../index.scss" as *;
+
+.contact {
+  background-image: url("../../../assets/contact/rose-top.png"),
+    url("../../../assets/contact/rose-center.png");
+  background-repeat: no-repeat;
+  background-position: top right, left center;
+  position: relative;
+
+  @media (max-width: 650px) {
+    background-size: contain, 0;
+  }
+
+  .contact-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 30px;
+
+    @media (max-width: 940px) {
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      gap: 30px;
+      width: 255px;
+      height: 255px;
+      border-radius: 20px;
+      font-size: 20px;
+      padding: 25px;
+      @include displayColumn;
+      @include shadowZeroTwo;
+
+      @media (max-width: 940px) {
+        font-size: 16px;
+        padding: 15px;
+        width: 155px;
+        height: 155px;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 14px;
+      }
+
+      .item-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        @include colorGreen;
+      }
+
+      .item-text {
+        font-weight: 300;
+      }
+    }
+  }
+  .contact-block-write {
+    margin-top: 140px;
+
+    @media (max-width: 550px) {
+      margin-top: 50px;
+    }
+
+    .cb-title-two {
+      text-align: end;
+
+      @media (max-width: 650px) {
+        text-align: center;
+      }
+    }
+
+    .contact-block-title {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 650px) {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .c_text {
+        gap: 50px;
+        max-width: 255px;
+        @include displayColumn;
+
+        @media (max-width: 650px) {
+          font-size: 14px;
+          gap: 20px;
+        }
+
+        .cb_stick-green {
+          display: block;
+          width: 255px;
+          height: 1px;
+          @include backGreen;
+        }
+      }
+    }
+    //внутриности формы
+    .c_block-form {
+      position: relative;
+
+      margin-top: 30px;
+      display: flex;
+      justify-content: end;
+
+      .c-form {
+        margin-bottom: 55px;
+        align-items: start;
+        gap: 10px;
+        @include displayColumn;
+
+        .c-input {
+          width: 445px;
+          height: 60px;
+          background-color: transparent;
+          border: 1px solid #43ffd2;
+          padding-left: 20px;
+          color: #fff;
+          @include insideText;
+          @include familyOswald;
+
+          @media (max-width: 550px) {
+            width: 285px;
+            height: 40px;
+          }
+          @media (max-width: 350px) {
+            width: 230px;
+          }
+
+          &::placeholder {
+            color: #395959;
+            @include insideText;
+          }
+        }
+
+        .c-comment {
+          height: 120px;
+          text-align: start;
+          resize: none;
+          padding-top: 19px;
+        }
+
+        .c-btn {
+          margin: 20px 0 10px;
+          @include btn;
+        }
+        .c-policy {
+          max-width: 342px;
+          @include policy;
+
+          .c-policy-link {
+            color: #922d2d;
+          }
+        }
+      }
+      .contact-red-signa {
+        position: absolute;
+        bottom: 20%;
+        right: 50%;
+
+        @media (max-width: 970px) {
+          display: none;
+        }
+      }
+    }
+    //внутриности формы
+
+    .c_ma {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 550px) {
+        margin-top: 30px;
+      }
+
+      .c_map-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        @include colorGreen;
+      }
+    }
+  }
+
+  .mini-light-red {
+    width: 400px;
+    height: 300px;
+    background-color: #922d2d;
+    filter: blur(110px);
+    z-index: -1;
+  }
+
+  .light-red {
+    width: 800px;
+    height: 200px;
+    background-color: #922d2d;
+    filter: blur(130px);
+    z-index: -1;
+  }
+
+  .c-light-red-left {
+    position: absolute;
+    top: 0;
+    left: -5%;
+  }
+
+  .c-light-red-right {
+    position: absolute;
+    top: -5%;
+    right: -5%;
+  }
+
+  .c-light-red-center {
+    position: absolute;
+    top: 15%;
+    right: 25%;
+    rotate: 30deg;
+  }
+
+  .c-light-red-bottom-left {
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+  }
+
+  .c-light-red-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

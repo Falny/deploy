@@ -1,0 +1,147 @@
+@use "../../index.scss" as *;
+
+.cart-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  z-index: 100;
+  user-select: text;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transform: translateX(100%);
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  @include shadowZeroTwo;
+
+  .cart {
+    background-color: #000;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95vh;
+    width: 0;
+
+    @media (max-width: 390px) {
+      height: 90vh;
+    }
+  }
+}
+
+.cart-active {
+  opacity: 1;
+  transform: translateX(0);
+  width: 100%;
+  overflow: visible;
+  transition: all 0.3s ease-in-out;
+
+  .cart {
+    width: 420px;
+    padding: 20px 30px;
+
+    @media (max-width: 550px) {
+      width: 390px;
+    }
+
+    @media (max-width: 390px) {
+      width: 75%;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      .cart-title {
+        font-size: 30px;
+        font-weight: 700;
+        @include colorGreen;
+
+        @media (max-width: 550px) {
+          font-size: 23px;
+        }
+
+        @media (max-width: 390px) {
+          font-size: 15px;
+        }
+      }
+
+      .cart-close {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        padding: 20px;
+
+        @media (max-width: 390px) {
+          padding: 10px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 50%;
+          width: 16px;
+          height: 1px;
+          rotate: 45deg;
+          @include backGreen;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 50%;
+          width: 16px;
+          height: 1px;
+          rotate: -45deg;
+          @include backGreen;
+        }
+      }
+    }
+
+    .cart-items-block {
+      .cart-item {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .cart-block-bottom {
+      border-top: 2px solid #555555;
+      padding-top: 10px;
+      font-size: 14px;
+
+      @media (max-width: 390px) {
+        font-size: 11px;
+      }
+
+      .cart-result {
+        font-weight: 700;
+        @include colorGreen;
+      }
+
+      .cart-btn {
+        margin-top: 20px;
+        padding: 20px;
+        width: 100%;
+        border: 1px solid #fff;
+        background-color: transparent;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include familyOswald;
+
+        @media (max-width: 390px) {
+          font-size: 10px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

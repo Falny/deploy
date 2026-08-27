@@ -1,0 +1,14 @@
+@use "../../App.scss" as *;
+
+.field-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+
+  .error-edit-active {
+    position: absolute;
+    left: 30%;
+    top: 0;
+    max-width: 150px;
+  }
+}

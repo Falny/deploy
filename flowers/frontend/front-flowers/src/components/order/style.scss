@@ -1,0 +1,354 @@
+@use "../../index.scss" as *;
+
+.order {
+  position: relative;
+  letter-spacing: 1px;
+  background-image: url("../../assets/order/rose1.png"),
+    url("../../assets/order/rose2.png"), url("../../assets/order/rose3.png");
+  background-repeat: no-repeat;
+  background-position: left top, right top, right top;
+
+  @media (max-width: 600px) {
+    background-size: 0, contain, contain;
+  }
+
+  .order-title-two {
+    margin-left: 95px;
+  }
+
+  .order-title {
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 40px 0 0;
+    @include colorGreen;
+
+    @media (max-width: 700px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 500px) {
+      margin: 20px 0 0;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 14px;
+    }
+
+    .order-pink-signa {
+      position: absolute;
+      left: 35%;
+      top: 50%;
+
+      @media (max-width: 1600px) {
+        top: auto;
+        bottom: -60%;
+      }
+
+      @media (max-width: 1200px) {
+        scale: 0.7;
+      }
+
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+
+    .order-light-pink {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+
+    .order-light-green {
+      position: absolute;
+      top: 0;
+      left: -10%;
+      z-index: -1;
+    }
+  }
+  .order-title-exceprion {
+    margin: 20px 0;
+    font-size: 20px;
+    @include colorGreen;
+
+    @media (max-width: 700px) {
+      font-size: 16px;
+    }
+  }
+
+  .order-container {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 600px) {
+      margin-top: 40px;
+    }
+
+    .order-cart-block {
+      max-width: 420px;
+      width: 100%;
+
+      @media (max-width: 1250px) {
+        display: none;
+      }
+    }
+
+    .order-the-order {
+      max-width: 540px;
+      user-select: text;
+    }
+
+    .oto-title {
+      font-size: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      @include colorGreen;
+
+      @media (max-width: 700px) {
+        font-size: 20px;
+      }
+      @media (max-width: 400px) {
+        font-size: 15px;
+      }
+    }
+
+    .order-form {
+      gap: 20px;
+      align-items: start;
+      @include displayColumn;
+
+      @media (max-width: 500px) {
+        gap: 10px;
+      }
+
+      .order-label {
+        align-items: start;
+        gap: 4px;
+        font-size: 20px;
+        @include displayColumn;
+
+        @media (max-width: 700px) {
+          font-size: 16px;
+        }
+
+        .order-input {
+          width: 540px;
+          height: 60px;
+          background-color: transparent;
+          border: 1px solid #555555;
+          padding-left: 20px;
+          font-size: 20px;
+          color: #fff;
+          @include familyOswald;
+
+          @media (max-width: 700px) {
+            font-size: 16px;
+            width: 400px;
+            height: 50px;
+          }
+          @media (max-width: 500px) {
+            font-size: 16px;
+            width: 250px;
+            height: 40px;
+          }
+          @media (max-width: 400px) {
+            font-size: 14px;
+            width: 200px;
+            height: 40px;
+          }
+
+          &::placeholder {
+            color: #555555;
+
+            @media (max-width: 700px) {
+              font-size: 16px;
+            }
+            @media (max-width: 400px) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .order-radio-option {
+        justify-content: start;
+        gap: 20px;
+        font-size: 20px;
+        letter-spacing: 0;
+        @include familyOswald;
+        @include display;
+
+        @media (max-width: 700px) {
+          font-size: 16px;
+        }
+
+        input[type="radio"]:after {
+          content: "";
+          position: relative;
+          top: -2px;
+          left: -1px;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          border: 1px solid #353535;
+          background-color: #000;
+          display: inline-block;
+
+          @media (max-width: 700px) {
+            width: 13px;
+            height: 13px;
+          }
+        }
+
+        input[type="radio"]:checked:after {
+          border: 1px solid #fff;
+          background: radial-gradient(circle at center, #fff 30%, #000 50%);
+        }
+      }
+
+      .order-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        @media (max-width: 600px) {
+          gap: 15px;
+        }
+
+        .order-label {
+          input {
+            width: 130px;
+
+            @media (max-width: 700px) {
+              width: 100px;
+            }
+          }
+        }
+      }
+
+      .order-form-promo-container {
+        display: flex;
+
+        .order-form-promo {
+          width: 160px;
+
+          @media (max-width: 400px) {
+            width: 100px;
+          }
+        }
+
+        .order-btn-promo {
+          border: 1px solid #43ffd2;
+          padding: 20px;
+          background-color: transparent;
+          width: 190px;
+          height: 61px;
+          @include colorGreen;
+          @include btn;
+
+          @media (max-width: 700px) {
+            width: 140px;
+            height: 51px;
+            padding: 10px;
+          }
+          @media (max-width: 500px) {
+            width: 100px;
+            height: 41px;
+          }
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+
+      .order-common-sum {
+        margin-top: 60px;
+
+        .oc-sum {
+          display: flex;
+          gap: 90px;
+
+          @media (max-width: 700px) {
+            font-size: 16px;
+            gap: 50px;
+          }
+          @media (max-width: 400px) {
+            font-size: 14px;
+            gap: 30px;
+          }
+        }
+
+        .oc-dilivery-discont {
+          margin: 10px 0 30px;
+          font-size: 14px;
+          text-transform: uppercase;
+
+          .oc-discont {
+            margin-bottom: 10px;
+          }
+        }
+
+        .oc-btn-policy {
+          .oc-btn {
+            margin-bottom: 10px;
+            @include btn;
+          }
+
+          .oc-policy {
+            @include policy;
+          }
+        }
+      }
+    }
+
+    .cart-empty {
+      font-size: 20px;
+      @include colorGreen;
+    }
+
+    .cart-result {
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      margin-top: 10px;
+      text-transform: uppercase;
+      @include colorGreen;
+    }
+  }
+
+  .order-light-pink-center {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    rotate: -45deg;
+  }
+
+  .order-light-green-center {
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+
+  .order-light-pink-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    rotate: 45deg;
+  }
+
+  .order-light-green-bottom {
+    position: absolute;
+    bottom: 0%;
+    left: 40%;
+    rotate: 45deg;
+  }
+
+  .order-light-green-bottom-end {
+    position: absolute;
+  }
+}

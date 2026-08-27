@@ -1,0 +1,131 @@
+@use '../../App.scss' as *;
+
+.who {
+	background-color: $blackColor;
+
+	&.who-active {
+		.who-block {
+			.who-item {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+
+	.who-block {
+		position: relative;
+		height: 100vh;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+
+		@media (max-width: 460px) {
+			display: flex;
+			justify-content: start;
+			flex-direction: column-reverse;
+			gap: 30px;
+		}
+
+		.who-item {
+			opacity: 0;
+			transform: translateY(-70px);
+			transition: all 0.8s ease;
+			transition-delay: calc(var(--order) * 200ms);
+		}
+
+		.who-text_right {
+			position: relative;
+			z-index: 10;
+			grid-row: 3;
+			grid-column: 1;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			.who-text_section {
+				.who-text_header {
+					color: $orangeColor;
+					margin-bottom: 4px;
+				}
+
+				.who-arrow {
+					margin-left: 3rem;
+					color: $orangeColor;
+				}
+			}
+		}
+
+		.who-text_left {
+			grid-row: 2;
+			grid-column: 2;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 1rem;
+		}
+
+		.who-triangle {
+			top: 42%;
+			left: 50%;
+			rotate: 45deg;
+			filter: blur(100px);
+
+			@media (max-width: 420px) {
+				rotate: 0deg;
+			}
+		}
+
+		.who-img {
+			grid-column: 1 / -1;
+			grid-row: 1;
+			text-align: center;
+
+			.who_img-main {
+				max-width: 1085px;
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+
+				@media (max-width: 1200px) {
+					max-width: 740px;
+				}
+				@media (max-width: 800px) {
+					max-width: 450px;
+				}
+				@media (max-width: 600px) {
+					max-width: 320px;
+				}
+				@media (max-width: 400px) {
+					max-width: 270px;
+				}
+			}
+		}
+
+		.who_img-triangle {
+			position: absolute;
+			bottom: 20%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-width: 225px;
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+
+			@media (max-width: 1200px) {
+				max-width: 175px;
+			}
+			@media (max-width: 720px) {
+				max-width: 125px;
+			}
+
+			@media (max-width: 520px) {
+				bottom: 25%;
+				left: 60%;
+			}
+
+			@media (max-width: 400px) {
+				max-width: 75px;
+			}
+		}
+	}
+}

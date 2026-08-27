@@ -1,0 +1,136 @@
+@use '../../App.scss' as *;
+
+.works {
+	background-color: $orangeColor;
+
+	.works-block {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.works_img-square {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			@media (max-width: 600px) {
+				top: auto;
+				bottom: 0;
+			}
+			@media (max-width: 520px) {
+				display: none;
+			}
+		}
+
+		.works_img-planet {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.works_img-stars {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			@media (max-width: 1300px) {
+				display: none;
+			}
+		}
+
+		.works-title {
+			color: $blackColor;
+
+			.works-circle {
+				background-color: $blackColor;
+
+				&::before {
+					content: '';
+					background-color: $blackColor;
+				}
+			}
+		}
+
+		.works-list {
+			width: 100%;
+			margin-top: 5.5rem;
+			display: flex;
+			justify-content: center;
+			gap: 10px 20px;
+			flex-wrap: wrap;
+
+			.works-item {
+				position: relative;
+				height: 300px;
+				width: 300px;
+				cursor: pointer;
+
+				@media (max-width: 750px) {
+					height: 200px;
+					width: 200px;
+				}
+				@media (max-width: 500px) {
+					height: 130px;
+					width: 130px;
+				}
+
+				.works-item_link {
+					display: block;
+					height: 100%;
+					position: absolute;
+					inset: 0;
+					width: 100%;
+					transition: all 0.3s;
+					border-radius: 4rem;
+					overflow: hidden;
+					transition: all 0.3s;
+
+					@media (max-width: 750px) {
+						border-radius: 2rem;
+					}
+
+					&:hover {
+						position: absolute;
+						top: -10%;
+						left: -10%;
+						box-shadow: 0 0 3rem #000;
+						height: 350px;
+						width: 350px;
+						border-radius: 4rem;
+						z-index: 10;
+						transition: all 0.3s;
+
+						@media (max-width: 750px) {
+							width: 250px;
+							height: 250px;
+							border-radius: 2rem;
+						}
+
+						@media (max-width: 500px) {
+							height: 170px;
+							width: 170px;
+						}
+					}
+
+					.works-item_img {
+						height: 350px;
+						width: 350px;
+						object-fit: cover;
+						object-position: left top;
+						transition: all 0.3s;
+
+						@media (max-width: 750px) {
+							width: 250px;
+							height: 250px;
+						}
+						@media (max-width: 500px) {
+							width: 170px;
+							height: 170px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,96 @@
+@use "../../../../index.scss" as *;
+
+.fallpay {
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-size: 17px;
+  position: relative;
+
+  @media (max-width: 630px) {
+    font-size: 14px;
+  }
+
+  .fallpay_back-img {
+    background-image: url("../../../../assets/payment/fallSuccess.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    height: 80vh;
+
+    .fallpay-container {
+      margin-left: 100px;
+
+      @media (max-width: 630px) {
+        margin-left: 30px;
+      }
+
+      .fp_error {
+        margin: 30px 0;
+
+        @media (max-width: 630px) {
+          margin: 20px 0;
+        }
+      }
+
+      .fp_link {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        @media (max-width: 630px) {
+          gap: 20px;
+        }
+
+        .fp-btn {
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          width: 255px;
+          height: 50px;
+          background-color: #7d2253;
+          color: #fff;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: all 0.3s;
+          @include familyOswald;
+
+          @media (max-width: 630px) {
+            font-size: 12px;
+          }
+
+          &:hover {
+            background-color: #6c1e48;
+          }
+        }
+
+        .fp_to-main {
+          color: #fff;
+          text-decoration: underline;
+
+          @media (max-width: 630px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .light-pink-top{
+    position: absolute;
+    top: -10%;
+    right: -5%;
+  }
+
+  .light-pink-bottom_left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  .light-pink-bottom_right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

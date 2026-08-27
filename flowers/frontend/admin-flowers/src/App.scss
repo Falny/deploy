@@ -1,0 +1,233 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	list-style-type: none;
+	box-sizing: border-box;
+}
+
+$padding: 30px;
+
+@mixin colorGreen {
+	background-color: #c0c0c0;
+}
+
+@mixin textCrey {
+	color: #c0c0c0;
+}
+
+@mixin LightGreen {
+	background-color: #e6e6e6;
+}
+
+@mixin hoverBtn {
+	background-color: #b9b9b9;
+}
+
+@mixin fontFamily {
+	font-family: 'Oswald', sans-serif;
+}
+
+body {
+	@include fontFamily;
+	color: #000;
+}
+
+.title {
+	font-weight: 200;
+	font-size: 30px;
+	margin-bottom: 20px;
+	text-transform: lowercase;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+
+	@media (max-width: 1050px) {
+		font-size: 25px;
+	}
+}
+
+.common-container {
+	width: 100%;
+	padding: $padding;
+	min-height: fit-content;
+	@include LightGreen;
+
+	@media (max-width: 400px) {
+		padding: 30px 15px;
+	}
+}
+
+input[type='checkbox'] {
+	appearance: none;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 5%;
+		width: 10px;
+		height: 10px;
+		border-radius: 3px;
+		border: 1px solid #919191;
+
+		@media (max-width: 1270px) {
+			left: 15%;
+		}
+	}
+
+	&:checked::after {
+		content: '';
+		background-color: #919191;
+	}
+}
+
+.form-field-file {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 13px;
+	margin-top: 5px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.form-field {
+	border-radius: 5px;
+	min-height: 35px;
+	width: 100%;
+	font-family: 'Oswald', sans-serif;
+	font-size: 13px;
+	padding-left: 10px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	background-color: #fff;
+	text-transform: uppercase;
+
+	@media (max-width: 400px) {
+		width: 80%;
+	}
+}
+
+.form-btn {
+	width: 150px;
+	padding: 10px 20px;
+	background-color: #c0c0c0;
+	font-size: 15px;
+	border-radius: 6px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.3s;
+	margin-top: 20px;
+	font-weight: 300;
+	@include fontFamily;
+
+	&:hover {
+		@include hoverBtn;
+	}
+}
+
+.form-text {
+	text-transform: lowercase;
+	font-size: 17px;
+	font-weight: 200;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+
+// для глвых полей
+.add-form-field {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 4px;
+	width: 320px;
+
+	@media (max-width: 400px) {
+		width: 250px;
+	}
+}
+
+// для существующих полей
+.item-fieled {
+	letter-spacing: 1px;
+	font-weight: 300;
+	height: 40px;
+	width: 220px;
+	border-radius: 5px;
+	font-size: 13px;
+	padding-left: 10px;
+	text-transform: uppercase;
+	@include colorGreen;
+	@include fontFamily;
+
+	@media (max-width: 550px) {
+		width: 170px;
+	}
+}
+
+// кнопка изменения
+.item-btn {
+	border-radius: 5px;
+	padding: 5px 10px;
+	text-transform: uppercase;
+	font-size: 11px;
+	cursor: pointer;
+	@include colorGreen;
+
+	&:hover {
+		@include hoverBtn;
+	}
+}
+
+.block {
+	display: flex;
+	gap: 200px;
+
+	@media (max-width: 1250px) {
+		gap: 100px;
+	}
+
+	@media (max-width: 1050px) {
+		flex-wrap: wrap;
+		gap: 50px;
+	}
+
+	.block-exist {
+		.block-item + .block-item {
+			margin-top: 15px;
+		}
+
+		.block-item {
+			display: flex;
+			gap: 5px;
+		}
+	}
+}
+
+.error {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	right: -60%;
+	top: 50%;
+	transition: all 0.3s;
+}
+
+.error-active {
+	background-color: rgb(255, 255, 255, 0.5);
+	border-radius: 5px;
+	padding: 5px;
+	font-weight: 300;
+	font-size: 12px;
+	opacity: 1;
+	visibility: visible;
+	transition: all 0.3s;
+	@include fontFamily;
+}

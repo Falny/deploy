@@ -1,0 +1,238 @@
+@use '../../App.scss' as *;
+
+.contact {
+	position: relative;
+	background-color: $blackColor;
+
+	&.contact-active {
+		.contact-block_social {
+			.contact-item_left,
+			.contact-item {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+
+		.contact-block {
+			.contact-item {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+	}
+
+	.error-or-accept {
+		position: fixed;
+		bottom: 5rem;
+		right: 2rem;
+		width: fit-content;
+		height: fit-content;
+		border-radius: 10px;
+		background-color: rgba($color: $orangeColor, $alpha: 0.5);
+		padding: 10px;
+		color: #fff;
+		opacity: 1;
+		z-index: 10;
+		visibility: visible;
+		transition: all 0.3s;
+	}
+
+	.error-or-accept_close {
+		position: fixed;
+		bottom: 5rem;
+		right: 2rem;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s;
+	}
+
+	.contact-block_social {
+		display: grid;
+		grid-template-columns: 2fr 2fr;
+		grid-template-rows: 2fr 2fr;
+
+		@media (max-width: 1440px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.contact-item_left {
+			transform: translateX(-100px);
+			opacity: 0;
+			transition: all 0.8s ease;
+		}
+
+		.contact-item {
+			opacity: 0;
+			transform: translateY(-200px);
+			transition: all 0.8s ease;
+			transition-delay: calc(var(--order) * 250ms);
+		}
+
+		.contact_img-main {
+			max-width: 920px;
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+
+			@media (max-width: 1200px) {
+				max-width: 625px;
+			}
+			@media (max-width: 720px) {
+				max-width: 415px;
+			}
+			@media (max-width: 400px) {
+				max-width: 270px;
+			}
+		}
+
+		.contact-social_icons {
+			grid-area: 2 / 2;
+			display: flex;
+
+			gap: 20px;
+			justify-content: space-around;
+
+			@media (max-width: 420px) {
+				flex-direction: column;
+			}
+
+			.contact-social_text {
+				margin-bottom: 1.5rem;
+				color: $orangeColor;
+			}
+
+			.contact-social_img {
+				border-radius: 20px;
+				border: 2px solid $orangeColor;
+				padding: 10px;
+				cursor: pointer;
+				transition: all 0.3s;
+				max-width: 210px;
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+
+				&:hover {
+					scale: 1.1;
+					box-shadow: 0 0 2rem $orangeColor;
+					transition: all 0.3s;
+				}
+
+				@media (max-width: 900px) {
+					max-width: 130px;
+				}
+			}
+		}
+	}
+
+	.contact-block {
+		position: relative;
+		margin-top: 5rem;
+		display: flex;
+		justify-content: space-evenly;
+
+		@media (max-width: 700px) {
+			flex-direction: column-reverse;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		.contact-item {
+			opacity: 0;
+			transform: translateX(-200px);
+			transition: all 0.8s ease;
+			transition-delay: calc(var(--order) * 350ms);
+			z-index: 1;
+		}
+
+		.contact-back {
+			top: 25%;
+			left: 20%;
+
+			@media (max-width: 900px) {
+				top: 0;
+			}
+			@media (max-width: 700px) {
+				top: auto;
+				bottom: 0;
+			}
+		}
+
+		.contact-img {
+			position: relative;
+			z-index: 2;
+			border-right: 1px solid $orangeColor;
+			border-left: 1px solid $orangeColor;
+			border-radius: 15px;
+			padding: 15px;
+			max-width: 400px;
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+
+			@media (max-width: 900px) {
+				max-width: 200px;
+			}
+		}
+
+		.contact-block_form {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 2rem;
+			max-width: 20rem;
+			width: 100%;
+
+			@media (max-width: 370px) {
+				max-width: 15rem;
+			}
+
+			.contact-form_title {
+				color: $orangeColor;
+				text-transform: uppercase;
+			}
+
+			.form {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+
+				.contact-form_label {
+					.contact-form_input {
+						background-color: transparent;
+						border-bottom: 1px solid $orangeColor;
+						padding: 10px;
+						width: 100%;
+					}
+
+					.contact-form_area {
+						background-color: transparent;
+						border-bottom: 1px solid $orangeColor;
+						padding: 10px;
+						width: 100%;
+						resize: none;
+					}
+				}
+			}
+
+			.btn-contact {
+				background-color: transparent;
+				border-radius: 15px;
+				padding: 10px;
+				border: 1px solid $orangeColor;
+				color: $orangeColor;
+				transition: all 0.3s;
+
+				&:hover {
+					color: #fff;
+					background-color: $orangeColor;
+					transition: all 0.3s;
+				}
+			}
+		}
+	}
+}

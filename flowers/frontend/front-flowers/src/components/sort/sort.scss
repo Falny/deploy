@@ -1,0 +1,101 @@
+@use "../../index.scss" as *;
+
+.catalog-sort {
+  border-radius: 20px;
+  padding: 25px;
+  height: max-content;
+  max-width: 255px;
+  width: 100%;
+  @include shadowZeroTwo;
+
+  @media (max-width: 900px) {
+    max-width: 115px;
+  }
+
+  @media (max-width: 700px) {
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .catalog_common-block + .catalog_common-block {
+    margin-top: 20px;
+
+    @media (max-width: 700px) {
+      margin-top: 0;
+    }
+  }
+
+  .c_common_list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c_common-item {
+    position: relative;
+
+    input[type="checkbox"] {
+      margin-right: 20px;
+      appearance: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #fff;
+        border-radius: 2px;
+      }
+
+      &:checked::after {
+        content: "";
+        border: 1px solid #43ffd2;
+        @include backGreen;
+      }
+    }
+  }
+
+  .c_common-item {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .catalog_sort-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    @include colorGreen;
+
+    @media (max-width: 700px) {
+      font-size: 13px;
+    }
+    @media (max-width: 400px) {
+      font-size: 11px;
+    }
+  }
+
+  .c_reset-filter {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 20px;
+    width: 100%;
+    padding: 16px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    letter-spacing: 1px;
+    @include familyOswald;
+
+    @media (max-width: 900px) {
+      font-size: 10px;
+      padding: 10px 5px;
+    }
+
+  }
+}

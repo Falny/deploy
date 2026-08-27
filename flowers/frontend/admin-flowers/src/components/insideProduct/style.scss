@@ -1,0 +1,121 @@
+@use '../../App.scss' as *;
+
+.header-product {
+	display: flex;
+	justify-content: space-between;
+}
+
+.edit-btn {
+	letter-spacing: 1px;
+	padding: 10px 15px;
+	border-radius: 5px;
+	height: fit-content;
+	font-weight: 300;
+	transition: all 0.3s;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 13px;
+	@include fontFamily;
+
+	&:hover {
+		transition: all 0.3s;
+		@include colorGreen;
+	}
+}
+
+.item-container {
+	display: flex;
+	gap: 40px;
+
+	@media (max-width: 1050px) {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.item-left {
+		.item-img {
+			width: 400px;
+			height: 400px;
+
+			@media (max-width: 1300px) {
+				width: 300px;
+				height: 300px;
+			}
+			@media (max-width: 400px) {
+				width: 250px;
+				height: 250px;
+			}
+		}
+	}
+
+	.item-right {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		.item-imgs {
+			display: flex;
+			gap: 20px;
+
+			@media (max-width: 700px) {
+				flex-wrap: wrap;
+			}
+
+			.item-imgs_item {
+				position: relative;
+
+				.item-archive {
+					width: 200px;
+					height: 200px;
+
+					@media (max-width: 1300px) {
+						width: 150px;
+						height: 150px;
+					}
+					@media (max-width: 400px) {
+						width: 100px;
+						height: 100px;
+					}
+				}
+
+				.item_delete-img {
+					position: absolute;
+					top: 0.5rem;
+					right: 0.5rem;
+					cursor: pointer;
+					padding: 15px;
+
+					&::after {
+						content: '';
+						position: absolute;
+						top: 0;
+						right: 0;
+						height: 15px;
+						width: 1px;
+						border-radius: 5px;
+						background-color: #000;
+						rotate: 45deg;
+					}
+					&::before {
+						content: '';
+						position: absolute;
+						top: 0;
+						right: 0;
+						height: 15px;
+						width: 1px;
+						border-radius: 5px;
+						background-color: #000;
+						rotate: -45deg;
+					}
+				}
+			}
+		}
+
+		.item-checked {
+			position: relative;
+			display: flex;
+			gap: 20px;
+			align-items: center;
+		}
+	}
+}

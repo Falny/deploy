@@ -1,0 +1,133 @@
+@use "../../../index.scss" as *;
+
+.special-reason {
+  margin-left: 95px;
+  position: relative;
+
+  @media (max-width: 1500px) {
+    margin-left: 30px;
+  }
+
+  @media (max-width: 1185px) {
+    margin-left: 0;
+  }
+
+  .so-pink {
+    position: absolute;
+    rotate: 45deg;
+    right: -10%;
+    top: 30%;
+
+    @media (max-width: 1000px) {
+      right: 5%;
+    }
+  }
+
+  .so-green {
+    position: absolute;
+  }
+
+  .special-reason-title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .sr_line-pink {
+      @include stick;
+    }
+  }
+
+  .special-reason_block {
+    display: flex;
+    gap: 100px;
+    margin-top: 30px;
+
+    @media (max-width: 1185px) {
+      gap: 30px;
+    }
+
+    .so {
+      min-width: 255px;
+
+      @media (max-width: 560px){
+        margin-bottom: 50px;
+      }
+
+      .so_text {
+        margin-bottom: 40px;
+        @include insideText;
+      }
+
+      .so_item {
+        list-style-type: disc;
+        @include insideText;
+      }
+
+      .so_item + .so_item {
+        margin-top: 20px;
+      }
+    }
+
+    .so-block {
+      position: relative;
+      display: flex;
+      gap: 30px;
+      align-self: center;
+
+      .so-img:last-child {
+        position: absolute;
+        right: 0;
+        top: -90%;
+        
+      }
+
+      @media (max-width: 1200px) {
+        .so-img:not(:nth-child(1)){
+          display: none;
+        } 
+      }
+
+      @media (max-width: 560px) {
+        display: none;
+      }
+    }
+  }
+
+  .btn {
+    position: relative;
+    display: inline;
+
+    .so_img-arrow{
+      position: absolute;
+      left: -8%;
+
+      @media (max-width: 1000px) {
+        top: -100%
+      }
+
+      @media (max-width: 700px) {
+        transform: scale(-1, 1);
+        right: -10%;
+        left: auto;
+        top: -50px;
+      }
+
+      @media (max-width: 700px) {
+        right: 20px;
+        top: -80px;
+        rotate: -40deg;
+      }
+
+    }
+
+    .so_btn {
+      margin-top: 40px;
+      @include btn;
+  
+      @media (max-width: 1000px) {
+        margin: 0;
+      }
+    }
+  }
+
+}

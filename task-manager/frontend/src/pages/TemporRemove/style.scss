@@ -1,0 +1,87 @@
+@use '../../app/App.scss' as *;
+
+.remove-it {
+	width: 60%;
+	height: 70%;
+	position: relative;
+	background-color: $mainWhite;
+	@include BorderRadiusMainContainers;
+	padding: $mainPaddingOnMainPage;
+
+	& > * {
+		color: $mainColorBlack;
+	}
+
+	@media (max-width: 890px) {
+		width: 80%;
+	}
+
+	.remove-it_block {
+		padding: $mainPaddingOnMainPage;
+		overflow-y: scroll;
+		height: 90%;
+
+		.remove-it_list {
+			display: flex;
+			gap: 2rem;
+			flex-wrap: wrap;
+
+			.remove-it_item {
+				@include displayColumnAIStart;
+				justify-content: start;
+				gap: 0.7rem;
+				border-radius: 1rem;
+				padding: $mainPaddingOnMainPage;
+				max-width: 15rem;
+				width: 100%;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+				@media (max-width: 700px) {
+					max-width: 12rem;
+				}
+
+				.remove-common_label {
+					color: $mainColorBlack;
+					@include text;
+					@include usualTextSize;
+
+					.remove-common_item {
+						@include text;
+						@include usualTextSize;
+						margin-top: 0.7rem;
+						padding-bottom: 3px;
+						border-bottom: 1px solid $colorForBorder;
+						color: $mainColorBlack;
+					}
+				}
+
+				.remove-it_block_btns {
+					display: flex;
+					justify-content: space-between;
+					.remove-it_btn + .remove-it_btn {
+						margin-left: 1rem;
+					}
+
+					.remove-it_btn {
+						padding: 5px 20px;
+					}
+
+					.remove {
+						&:hover {
+							background-color: $paleOldRoseColor;
+							color: #fff;
+							border: 1px solid $paleOldRoseColor;
+						}
+					}
+					.save {
+						&:hover {
+							background-color: $paleGreenColor;
+							color: #fff;
+							border: 1px solid $paleGreenColor;
+						}
+					}
+				}
+			}
+		}
+	}
+}

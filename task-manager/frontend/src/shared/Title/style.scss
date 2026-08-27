@@ -1,0 +1,11 @@
+.main-title {
+	font-weight: 200;
+	font-size: 6rem;
+
+	@media (max-width: 700px) {
+		font-size: 4rem;
+	}
+	@media (max-width: 350px) {
+		font-size: 3.5rem;
+	}
+}

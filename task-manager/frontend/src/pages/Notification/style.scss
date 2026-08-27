@@ -1,0 +1,81 @@
+@use '../../app/App.scss' as *;
+
+.notification {
+	@include backgroundBlur;
+	@include text;
+	border-radius: 1rem;
+	width: 100%;
+	@include scrollBar;
+	height: $mainHeight;
+
+	.notification-list {
+		@include displayAIStart;
+		@include middleTextSize;
+		gap: 0.6rem;
+
+		.notification-item {
+			position: relative;
+			@include backgroundBlur;
+			border-radius: 0.5rem;
+			padding: 10px 15px;
+			width: 100%;
+
+			.note-close {
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+				padding: 5px;
+
+				@media (max-width: 500px) {
+					top: 0.5rem;
+					right: 0.5rem;
+				}
+
+				@media (max-width: 400px) {
+					top: -10px;
+					right: -10px;
+				}
+			}
+
+			.notification-item_note {
+				margin-bottom: 0.4rem;
+
+				.notification-item_note-name {
+					color: $palePinkColor;
+				}
+			}
+
+			.notification-item_block {
+				@include displayGorizont;
+				justify-content: space-between;
+
+				.notification-item_block-time {
+					@include miniTextSize;
+				}
+
+				.notification-item_block-btn {
+					@include text;
+					@include middleTextSize;
+					background-color: transparent;
+					border-radius: 0.7rem;
+					padding: 5px 10px;
+					cursor: pointer;
+				}
+
+				.notification-active-btn {
+					border: 1px solid $paleGreenColor;
+					background-color: $paleGreenColor;
+					color: #000;
+					transition: all 0.3s;
+				}
+
+				.notification-inactive-btn {
+					border: 1px solid $paleGreenColor;
+					color: $paleGreenColor;
+					transition: all 0.3s;
+					cursor: auto;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,472 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	font-family: 'Montserrat', sans-serif;
+	// color: #190019;
+	color: #f6f6f6;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+	// outline: 1px solid red !important;
+}
+
+:root {
+	--main-padding: 20px;
+	--main-height: 100vh;
+	--main-math: 2;
+
+	@media (max-width: 700px) {
+		--main-padding: 15px;
+	}
+	@media (max-width: 600px) {
+		--main-height: 90vh;
+		--main-math: 3;
+	}
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf')
+		format('truetype');
+}
+
+$mainPaddingOnMainPage: var(--main-padding);
+$mainHeight: calc(
+	var(--main-height) - ($mainPaddingOnMainPage * var(--main-math))
+);
+
+$mainWhite: #f6f6f6;
+$mainColorBlack: #604d53;
+$mainColorPink: #b5b5b5;
+// $mainColorPink: #ffdbda;
+// $agreeColorBlack: #5fff4ea7;
+$backgroundField: rgba(218, 216, 216, 0.523);
+$palePinkColor: #d5c5c8;
+$paleSlateColor: #dddbda;
+// $paleOldRoseColor: #db7f8e;
+$paleOldRoseColor: #ec5748;
+$paleOldRoseColorLight: rgb(236, 87, 72, 0.4);
+$paleCoolSteelColor: #9da3a4;
+$paleTaupeGreyColor: #604d53;
+$paleGreenColor: #74c365;
+$colorForBorder: #b4a0a5;
+
+@mixin scrollBar {
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	scrollbar-color: $backgroundField $paleCoolSteelColor;
+}
+
+@mixin displayColumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin displayColumnAIStart {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+@mixin displayAIStart {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+@mixin displayGorizont {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin mainBackground {
+	background-color: $mainColorPink;
+	// background-color: #ffcbdb; // #FADADD
+}
+@mixin mainBackgroundHover {
+	background-color: #190019;
+}
+
+@mixin colorPink {
+	color: $mainColorPink;
+}
+@mixin mainColor {
+	color: $mainColorBlack;
+}
+
+@mixin usualTextSize {
+	font-size: 1rem;
+	letter-spacing: 1px;
+
+	@media (max-width: 835px) {
+		font-size: 0.9rem;
+	}
+	@media (max-width: 700px) {
+		font-size: 0.8rem;
+	}
+	// @media (max-width: 500px) {
+	// 	font-size: 0.7rem;
+	// }
+}
+
+@mixin headerTextSize {
+	font-size: 1.3rem;
+	letter-spacing: 1px;
+
+	@media (max-width: 850px) {
+		font-size: 1rem;
+	}
+}
+
+@mixin middleTextSize {
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+
+	@media (max-width: 835px) {
+		font-size: 0.8rem;
+	}
+	// @media (max-width: 700px) {
+	// 	font-size: 0.7rem;
+	// }
+}
+
+@mixin miniTextSize {
+	font-size: 0.7rem;
+}
+
+@mixin text {
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 1px;
+}
+
+@mixin sliceText {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin backCircle1 {
+	background-color: $paleTaupeGreyColor;
+}
+@mixin backCircle2 {
+	background-color: $paleCoolSteelColor;
+}
+@mixin backCircle3 {
+	background-color: $palePinkColor;
+}
+@mixin backCircle4 {
+	background-color: $paleOldRoseColor;
+}
+
+@mixin backgroundBlur {
+	background-color: rgb(0, 0, 0, 0.1);
+	backdrop-filter: blur(50px);
+}
+
+@mixin BorderRadiusMainContainers {
+	border-radius: 20px;
+}
+
+@mixin bgPopUpWindow {
+	@include BorderRadiusMainContainers;
+	background-color: $mainWhite;
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+	padding: 30px 20px;
+
+	@media (max-width: 700px) {
+		padding: 15px;
+	}
+}
+
+.container-side {
+	padding: 30px 20px;
+
+	@media (max-width: 1135px) {
+		padding: 20px 10px;
+	}
+	@media (max-width: 500px) {
+		padding: 10px;
+	}
+	@media (max-width: 400px) {
+		padding: 2px;
+	}
+}
+
+.icon > * {
+	stroke: $mainWhite;
+	stroke-width: 1px;
+}
+
+.icon-delete > * {
+	stroke: $paleOldRoseColor;
+	stroke-width: 1px;
+}
+
+.icon-side > * {
+	stroke: $mainWhite;
+	stroke-width: 1px;
+}
+
+.icon-side {
+	flex-shrink: 0;
+	width: 25px;
+	height: 25px;
+
+	@media (max-width: 400px) {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.icon-delete,
+.icon-black,
+.icon {
+	@media (max-width: 835px) {
+		width: 20px;
+		height: 20px;
+	}
+
+	@media (max-width: 500px) {
+		width: 15px;
+		height: 15px;
+	}
+}
+
+.icon-black > * {
+	stroke: $mainColorBlack;
+	stroke-width: 1px;
+}
+
+.container-icons {
+	position: absolute;
+	top: 1rem;
+	right: -2.7rem;
+	@include displayColumnAIStart;
+	gap: 1rem;
+
+	& > * {
+		cursor: pointer;
+	}
+
+	@media (max-width: 700px) {
+		right: -1.9rem;
+	}
+	@media (max-width: 500px) {
+		top: -2.3rem;
+		right: 3rem;
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+	}
+}
+
+.mini-close {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	z-index: 101;
+	// padding: 10px;
+
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 0;
+		width: 10px;
+		height: 1px;
+		background-color: $mainWhite;
+	}
+
+	&::after {
+		rotate: 45deg;
+	}
+	&::before {
+		rotate: -45deg;
+	}
+}
+
+.btn-send {
+	background-color: transparent;
+	@include text;
+	@include middleTextSize;
+	border: 1px solid $paleSlateColor;
+	border-radius: 10px;
+	padding: 15px;
+	cursor: pointer;
+	transition: 0.2s ease;
+	color: $mainColorBlack;
+
+	&:hover {
+		background-color: $paleSlateColor;
+		transition: 0.2s ease;
+	}
+
+	@media (max-width: 700px) {
+		padding: 10px 5px;
+	}
+}
+
+.block-close {
+	position: absolute;
+	top: -2.3rem;
+	right: -2.9rem;
+	border: 1px solid $mainWhite;
+	border-radius: 10px;
+	width: 30px;
+	height: 30px;
+	z-index: 1000;
+	cursor: pointer;
+
+	@media (max-width: 700px) {
+		top: -1.3rem;
+		right: -1.9rem;
+		width: 20px;
+		height: 20px;
+		border-radius: 6px;
+	}
+
+	@media (max-width: 500px) {
+		top: -2.3rem;
+		right: 0rem;
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 1px;
+		height: 20px;
+		background-color: $mainWhite;
+
+		@media (max-width: 700px) {
+			height: 12px;
+		}
+	}
+
+	&::after {
+		rotate: -45deg;
+		transform: translate(7px, -7px);
+
+		@media (max-width: 700px) {
+			transform: translate(4px, -5px);
+		}
+	}
+	&::before {
+		rotate: 45deg;
+		transform: translate(-7px, -7px);
+
+		@media (max-width: 700px) {
+			transform: translate(-5px, -4px);
+		}
+	}
+}
+
+.title {
+	@include headerTextSize;
+	margin-bottom: 30px;
+
+	@media (max-width: 835px) {
+		margin-bottom: 15px;
+	}
+}
+
+.common-block-back {
+	position: fixed;
+	inset: 0;
+	@include backgroundBlur;
+	@include displayColumn;
+	backdrop-filter: blur(5px);
+}
+
+.create-something_btn {
+	border: 1px solid $mainWhite;
+	border-radius: 10px;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+
+	@media (max-width: 700px) {
+		width: 20px;
+		height: 20px;
+		border-radius: 6px;
+	}
+
+	.inner-line {
+		position: absolute;
+		width: 1px;
+		height: 20px;
+		border-radius: 5px;
+		background-color: $mainWhite;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 50%;
+
+		@media (max-width: 700px) {
+			height: 10px;
+		}
+	}
+
+	.inner-line:nth-child(2) {
+		rotate: 90deg;
+		transform: translate(-10px, 0);
+
+		@media (max-width: 700px) {
+			transform: translate(-5px, 0);
+		}
+	}
+
+	&:hover::before {
+		content: '';
+		position: absolute;
+		@include miniTextSize;
+		top: -1rem;
+		right: -5rem;
+		padding: 3px;
+		@include mainBackground;
+		border-radius: 10px;
+		width: 6rem;
+		z-index: 1;
+		text-align: center;
+	}
+}
+
+.active {
+	padding: 10px 15px;
+	border-radius: 1rem;
+	opacity: 1;
+	visibility: visible;
+	transition: all 0.3s ease;
+}
+.inactive {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.cursor-wait {
+	cursor: wait;
+}
+
+.warnings-pull {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	gap: 1rem;
+	z-index: 100;
+}

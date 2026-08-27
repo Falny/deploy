@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: Main
+Class-Path: postgresql-42.7.8.jar json-simple-1.1.1.jar junit-4.10.jar h
+ amcrest-core-1.1.jar checker-qual-3.49.5.jar
+

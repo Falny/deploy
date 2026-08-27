@@ -1,0 +1,155 @@
+@use '../../app/App.scss' as *;
+
+.friend {
+	@include backgroundBlur;
+	border-radius: 1rem;
+	width: 100%;
+	@include scrollBar;
+	height: $mainHeight;
+
+	.friend-block {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.friend-search {
+		.friend-icon_search {
+			position: absolute;
+			padding-left: 0.3rem;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+
+		.friend-search_label {
+			display: flex;
+			gap: 0.5rem;
+
+			.search-block {
+				width: 100%;
+				position: relative;
+
+				.friend-search_input {
+					height: 2rem;
+					width: 100%;
+					border: none;
+					border-radius: 0.6rem;
+					padding-left: 2rem;
+					@include text;
+					@include middleTextSize;
+					@include backgroundBlur;
+
+					&::placeholder {
+						color: $mainWhite;
+					}
+				}
+
+				.search-clear {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					right: 0.5rem;
+
+					&::after,
+					&::before {
+						background-color: $mainWhite;
+					}
+				}
+			}
+			.friend-search_btn {
+				background-color: transparent;
+				@include text;
+				@include middleTextSize;
+				border: 1px solid #fff;
+				border-radius: 0.5rem;
+				padding: 0 15px;
+				color: #fff;
+				transition: all 0.3s;
+
+				&:hover {
+					background-color: $palePinkColor;
+					transition: all 0.3s;
+					color: #000;
+					border: 1px solid transparent;
+				}
+			}
+		}
+	}
+	.friend-list {
+		&:first-of-type {
+			border-bottom: 2px dashed $palePinkColor;
+			padding-bottom: 1rem;
+		}
+
+		.friend-item + .friend-item {
+			margin-top: 1rem;
+		}
+
+		.friend-item {
+			@include backgroundBlur;
+			border-radius: 0.6rem;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.friend-find_block_item {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+
+				.friend-find_item_name {
+					color: $mainWhite;
+					@include text;
+					@include usualTextSize;
+				}
+
+				.friend-find_img {
+					width: 25px;
+					height: 25px;
+					border-radius: 50%;
+				}
+			}
+
+			.friend-find_icon {
+				cursor: pointer;
+			}
+
+			.block-btns {
+				display: flex;
+				align-items: center;
+
+				.friend-btn {
+					padding: 5px 10px;
+					color: $paleGreenColor;
+					border: 1px solid $paleGreenColor;
+					transition: all 0.3s;
+
+					&:hover {
+						background-color: $paleGreenColor;
+						color: #fff;
+						transition: all 0.3s;
+					}
+				}
+				.friend-delete {
+					padding: 1px 10px;
+					margin-left: 1rem;
+					color: $paleOldRoseColor;
+					border: 1px solid $paleOldRoseColor;
+					transition: all 0.3s;
+
+					&:hover {
+						background-color: $paleOldRoseColor;
+						color: #fff;
+						transition: all 0.3s;
+					}
+				}
+			}
+		}
+
+		.friend-find_empty {
+			@include middleTextSize;
+		}
+	}
+}

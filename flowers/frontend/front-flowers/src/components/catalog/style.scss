@@ -1,0 +1,166 @@
+@use "../../index.scss" as *;
+
+.catalog {
+  text-transform: uppercase;
+  background-image: url("../../assets/catalog/flower1.png"),
+    url("../../assets/catalog/flower2.png");
+  background-repeat: no-repeat;
+  background-position: top left, top right;
+  position: relative;
+  background-size: auto auto;
+
+
+  @media (max-width: 850px) {
+    background-position: top left, center right;
+  }
+
+  @media (max-width: 400px) {
+    background-size: contain;
+  }
+
+  li {
+    cursor: pointer;
+    font-size: 15px;
+    user-select: none;
+  }
+
+  .catalog-catalog {
+    padding: 25px 20px;
+    border-radius: 30px;
+    max-width: 920px;
+    margin-bottom: 30px;
+    @include shadowZeroTwo;
+
+    @media (max-width: 1200px) {
+      max-width: 720px;
+    }
+    @media (max-width: 700px) {
+      backdrop-filter: none;
+      background-color: transparent;
+      margin: 0;
+    }
+
+    .catalog-category {
+      @media (max-width: 700px) {
+        display: none;
+      }
+    }
+
+    .catalog-top {
+      margin-bottom: 70px;
+
+      .catalog-title {
+        margin-left: 100px;
+
+        .catalog-choice {
+          font-size: 17px;
+          margin-top: 20px;
+
+          @media (max-width: 700px) {
+            font-size: 14px;
+          }
+          @media (max-width: 400px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .catalog_sort-and-bukets {
+    display: flex;
+    gap: 30px;
+
+    @media (max-width: 700px) {
+      display: none;
+    }
+
+    .catalog-flowers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 60px;
+    }
+  }
+
+  .catalog-adaptive-menu {
+    display: none;
+
+    @media (max-width: 700px) {
+      display: block;
+    }
+
+    .menu-title {
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-decoration: underline;
+      @include colorPink;
+
+      @media (max-width: 400px) {
+        font-size: 13px;
+      }
+    }
+
+    .menu-title-active {
+      margin-bottom: 20px;
+      text-decoration: underline;
+      @include colorGreen;
+
+      @media (max-width: 400px) {
+        font-size: 13px;
+      }
+    }
+
+    .menu-toggle {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .menu-toggle-active {
+      max-height: 300px;
+      opacity: 1;
+      overflow: visible;
+      transition: all 0.5s ease;
+    }
+
+    .card-list{
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .catalog-pink {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .catalog-pink-top1 {
+    top: 10%;
+    left: 5%;
+    rotate: 45deg;
+  }
+
+  .catalog-pink-top2 {
+    top: 5%;
+    right: 5%;
+    rotate: -50deg;
+  }
+
+  .catalog-pink-top3 {
+    top: 50%;
+    left: 5%;
+
+    @media (max-width: 930px) {
+      left: 30%;
+    }
+  }
+
+  .catalog-pink-top4 {
+    top: 60%;
+    right: 5%;
+  }
+}

@@ -1,0 +1,219 @@
+@use '../../app/App.scss' as *;
+
+.create_block {
+	@include bgPopUpWindow;
+	position: relative;
+	width: 400px;
+	@include displayColumnAIStart;
+	gap: 20px;
+	z-index: 99;
+
+	.edit-cursor {
+		cursor: pointer;
+	}
+
+	.create_block-input {
+		border: none;
+		border-bottom: 1px solid $colorForBorder;
+		color: $mainColorBlack;
+		background-color: $mainWhite;
+		padding: 15px 10px;
+		@include text;
+		@include usualTextSize;
+
+		&::placeholder {
+			@include text;
+			@include usualTextSize;
+		}
+	}
+
+	.create_block-textarea {
+		padding-top: 5px;
+		resize: none;
+		min-height: 100px;
+	}
+
+	.edit-desc {
+		min-height: 50px;
+	}
+
+	.create_label {
+		@include text;
+		@include usualTextSize;
+		position: relative;
+		color: $mainColorBlack;
+
+		.create-select {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			margin: 1rem 0;
+			padding-bottom: 5px;
+			cursor: pointer;
+			color: $mainColorBlack;
+			border-bottom: 1px solid $colorForBorder;
+
+			.create-choice {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				border-radius: 10px;
+				padding: 5px;
+				background-color: $paleSlateColor;
+				color: $mainColorBlack;
+			}
+		}
+
+		.create-option {
+			background-color: $mainWhite;
+			position: absolute;
+			top: 3rem;
+			right: 0rem;
+			@include displayColumnAIStart;
+			justify-content: start;
+			gap: 0.8rem;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+			z-index: 101;
+			width: fit-content;
+
+			& > * {
+				color: $mainColorBlack;
+			}
+		}
+	}
+
+	.create-for_block {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+
+		& > * {
+			color: $mainColorBlack;
+		}
+
+		.create-for_block-text {
+			@include text;
+			@include usualTextSize;
+		}
+
+		.create-for_block-input {
+			border-radius: 5px;
+			border: 1px solid $paleSlateColor;
+			width: 15px;
+			height: 15px;
+			cursor: pointer;
+		}
+		.checked {
+			background-color: $paleSlateColor;
+		}
+	}
+
+	.status {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		z-index: 100;
+
+		& > * {
+			color: $mainColorBlack;
+		}
+
+		.edit-status {
+			width: 100%;
+		}
+
+		.status_status {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid $paleSlateColor;
+			padding-bottom: 5px;
+			width: 50%;
+			cursor: pointer;
+
+			.status_status-choice {
+				color: $mainColorBlack;
+				@include text;
+				@include usualTextSize;
+			}
+
+			.status_status-choice::first-letter {
+				text-transform: capitalize;
+			}
+		}
+
+		.create-select-status {
+			background-color: $mainWhite;
+			position: absolute;
+			top: 3rem;
+			left: -10rem;
+			@include displayColumnAIStart;
+			justify-content: start;
+			gap: 0.8rem;
+			width: 50%;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+		}
+
+		.create-status-btn {
+			border: 1px solid $mainColorBlack;
+
+			& > * {
+				background-color: $mainColorBlack;
+			}
+
+			&:hover::before {
+				content: 'Создать статус';
+			}
+		}
+	}
+
+	.edit-status {
+		@include displayGorizont;
+		justify-content: space-between;
+	}
+
+	.create-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+		padding: 5px;
+		border-bottom: 1px solid $colorForBorder;
+		transition: all 0.3s;
+		@include text;
+		@include usualTextSize;
+
+		.create-item_text::first-letter {
+			text-transform: capitalize;
+		}
+
+		& > * {
+			color: $mainColorBlack;
+		}
+
+		&:hover {
+			border-bottom: 1px solid $paleOldRoseColor;
+			transition: all 0.3s;
+		}
+	}
+
+	.create-label_date-end {
+		@include displayAIStart;
+		@include text;
+		@include usualTextSize;
+		color: $mainColorBlack;
+
+		& > * {
+			width: 100%;
+		}
+
+		.create_block-input {
+			display: flex;
+			gap: 0.5rem;
+			color: $mainColorBlack;
+		}
+	}
+}

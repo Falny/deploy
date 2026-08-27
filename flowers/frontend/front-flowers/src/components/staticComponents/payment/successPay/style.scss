@@ -1,0 +1,94 @@
+@use "../../../../index.scss" as *;
+
+.success-pay {
+  margin-top: 50px;
+  text-transform: uppercase;
+  position: relative;
+
+  .success-pay_back {
+    background-image: url("../../../../assets/payment/flowerSuccess.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    min-height: 80vh;
+
+    @media (max-width: 800px) {
+      background-size: contain;
+    }
+
+    @media (max-width: 400px){
+      min-height: 60vh;
+    }
+
+    .success-pay_container {
+      margin-left: 95px;
+
+      @media (max-width: 560px){
+        margin: 0;
+      }
+
+
+      .sp_title {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .sp_pink-stick {
+          @include stick;
+        }
+      }
+
+      .sp_block {
+        margin-top: 75px;
+        font-size: 17px;
+        position: relative;
+
+        @media (max-width: 500px) {
+          font-size: 14px;
+          margin-top: 35px;
+        }
+
+        .sp-thanks {
+          margin: 20px 0 60px;
+        }
+
+        .sp_to-main {
+          text-decoration: underline;
+          @include colorGreen;
+        }
+
+        .sp_rose-signa {
+          position: absolute;
+          left: 20%;
+
+          @media (max-width: 500px) {
+            scale: 0.8;
+          }
+        }
+      }
+    }
+  }
+  .sp_pink-top {
+    position: absolute;
+    right: -10%;
+    top: 0;
+  }
+
+  .sp_green-top {
+    position: absolute;
+    left: -10%;
+    top: 0;
+  }
+
+  .sp_pink-bottom {
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+  }
+
+  .sp_green-bottom {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    transform: translateY(40%);
+  }
+}

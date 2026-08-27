@@ -1,0 +1,134 @@
+@use '../../app/App.scss' as *;
+
+.open-project {
+	--height-of-window: 60vh;
+	width: 60%;
+	height: var(--height-of-window);
+	position: relative;
+	background-color: $mainWhite;
+	@include BorderRadiusMainContainers;
+	padding: $mainPaddingOnMainPage;
+
+	@media (max-width: 835px) {
+		width: 80%;
+	}
+	@media (max-width: 500px) {
+		width: 95%;
+		--height-of-window: 80vh;
+	}
+
+	.open-project_block + .open-project_block {
+		margin-top: 1rem;
+	}
+
+	.open-project_block {
+		.open-project_back {
+			background-color: $mainColorPink;
+		}
+
+		.open-project_header {
+			@include BorderRadiusMainContainers;
+			padding: $mainPaddingOnMainPage;
+			@include middleTextSize;
+
+			.open-project_header-text {
+				@include sliceText;
+			}
+
+			.open-project_header-text + .open-project_header-text {
+				margin-top: 0.9rem;
+			}
+		}
+
+		.open-project_info {
+			border-radius: 15px;
+			padding: 10px 15px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			& > * {
+				cursor: pointer;
+			}
+
+			.open-project_create-task {
+				&:hover::before {
+					content: 'Создать задачу';
+				}
+			}
+
+			.middle-block {
+				display: flex;
+				gap: 2rem;
+
+				.sort {
+					@include text;
+					@include usualTextSize;
+					display: flex;
+					gap: 0.5rem;
+					align-items: center;
+				}
+			}
+		}
+		.open-project_task {
+			height: calc(var(--height-of-window) - ($mainPaddingOnMainPage * 11));
+			@include scrollBar;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1.5rem;
+
+			.open-project_task-item {
+				@include displayColumnAIStart;
+				gap: 0.5rem;
+				width: 30%;
+				height: fit-content;
+				background-color: $mainColorPink;
+				padding: 20px 15px;
+				@include BorderRadiusMainContainers;
+				cursor: pointer;
+
+				@media (max-width: 600px) {
+					width: 40%;
+				}
+
+				.open-project_task-item_status {
+					padding: 2px 4px;
+					width: fit-content;
+					border-radius: 1rem;
+					color: $mainColorBlack;
+					@include miniTextSize;
+				}
+
+				.open-project_task-item_text {
+					@include middleTextSize;
+					@include sliceText;
+					padding-bottom: 3px;
+					border-bottom: 1px solid $paleCoolSteelColor;
+				}
+
+				.open-project_task-item_block {
+					display: flex;
+					justify-content: space-between;
+					@include middleTextSize;
+
+					@media (max-width: 400px) {
+						flex-direction: column;
+						gap: 5px;
+
+						& > * {
+							width: fit-content;
+						}
+					}
+
+					.open-project_task-item_time,
+					.open-project_task-item_people {
+						padding: 2px 4px;
+						background-color: $mainWhite;
+						border-radius: 8px;
+						color: $mainColorBlack;
+					}
+				}
+			}
+		}
+	}
+}

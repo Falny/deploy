@@ -1,0 +1,66 @@
+@use '../../app/App.scss' as *;
+
+.check-pass-edit {
+	position: absolute;
+	inset: 0;
+
+	.check-pass-edit-block {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		background-color: #fff;
+		border-radius: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-width: 300px;
+		width: 100%;
+
+		.check-pass-btn-close {
+			border: 1px solid $paleSlateColor;
+
+			&::after,
+			&::before {
+				background-color: $paleSlateColor;
+			}
+		}
+
+		.check-pass-edit_label {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			@include middleTextSize;
+			color: $mainColorBlack;
+
+			.check-pass-edit_input {
+				@include text;
+				@include middleTextSize;
+				padding: 10px 0;
+				padding-left: 10px;
+				border: 1px solid $paleSlateColor;
+				border-radius: 10px;
+				color: $mainColorBlack;
+			}
+		}
+
+		.check-pass-edit_btn {
+			@include text;
+			@include middleTextSize;
+			background-color: transparent;
+			border: 1px solid $paleGreenColor;
+			padding: 10px;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: all 0.2s;
+			color: $paleGreenColor;
+
+			&:hover {
+				background-color: $paleGreenColor;
+				color: #fff;
+				transition: all 0.2s;
+			}
+		}
+	}
+}

@@ -1,0 +1,91 @@
+@use '../../app/App.scss' as *;
+
+.main-page {
+	@include mainBackground;
+	position: relative;
+	padding: $mainPaddingOnMainPage; // паддинг вычисляет высоту в sideMain
+	display: flex;
+	gap: 30px;
+
+	@media (max-width: 700px) {
+		gap: 15px;
+	}
+	@media (max-width: 600px) {
+		flex-direction: column-reverse;
+	}
+
+	// связан с 3
+	.init-page_circle-1 {
+		@include backCircle1;
+		position: absolute;
+		top: 0;
+		right: 5%;
+		max-width: 30vw;
+		max-height: 25vh;
+		width: 100%;
+		height: 100%;
+		filter: blur(200px);
+		border-radius: 50%;
+		rotate: -90deg;
+
+		@media (max-width: 500px) {
+			right: 20%;
+		}
+	}
+
+	// связан с 4
+	.init-page_circle-2 {
+		@include backCircle2;
+		position: absolute;
+		top: 20%;
+		left: 0;
+		max-width: 30vw;
+		max-height: 25vh;
+		width: 100%;
+		height: 100%;
+		filter: blur(80px);
+		border-radius: 50%;
+		rotate: 45deg;
+
+		@media (max-width: 600px) {
+			max-width: 25vw;
+			max-height: 20vh;
+		}
+	}
+	.init-page_circle-3 {
+		@include backCircle3;
+		position: absolute;
+		top: 30%;
+		left: 45%;
+		max-width: 35vw;
+		max-height: 40vh;
+		width: 100%;
+		height: 100%;
+		filter: blur(100px);
+		border-radius: 50%;
+		rotate: 45deg;
+
+		@media (max-width: 500px) {
+			left: 30%;
+			max-width: 25vw;
+			max-height: 30vh;
+		}
+	}
+	.init-page_circle-4 {
+		@include backCircle4;
+		position: absolute;
+		bottom: 10%;
+		left: 0;
+		max-width: 40vw;
+		max-height: 35vh;
+		width: 100%;
+		height: 100%;
+		filter: blur(100px);
+		border-radius: 50%;
+
+		@media (max-width: 600px) {
+			max-width: 35vw;
+			max-height: 30vh;
+		}
+	}
+}
