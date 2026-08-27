@@ -15,6 +15,7 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -40,13 +41,14 @@ public class HandleGetLoginYandex implements HttpHandler {
         try {
             InputStream io = exchange.getRequestBody();
             String code = new String(io.readAllBytes(), StandardCharsets.UTF_8);
+             String uri = "https://https://portfollio-gab.ru/task-manager/tatipati";
 
             HttpClient httpClient = HttpClient.newHttpClient();
 
-            String requestBody = "grant_type=authorization_code"
-                    + "&client_secret=" + System.getenv("CLIENT_SECRET")
-                    + "&client_id=" + System.getenv("CLIENT_ID")
-                    + "&code=" + code;
+             String requestBody = "grant_type=authorization_code"
+                    + "&client_secret=" + URLEncoder.encode(System.getenv("CLIENT_SECRET"), StandardCharsets.UTF_8)
+                    + "&client_id=" + URLEncoder.encode(System.getenv("CLIENT_ID"), StandardCharsets.UTF_8)
+                    + "&code=" + URLEncoder.encode(code, StandardCharsets.UTF_8)+ "&redirect_uri=" + URLEncoder.encode(uri, StandardCharsets.UTF_8);
 
             HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://oauth.yandex.ru/token")).header("Content-Type", "x-www-form-urlencoded").POST(HttpRequest.BodyPublishers.ofString(requestBody)).build();
 
@@ -54,6 +56,7 @@ public class HandleGetLoginYandex implements HttpHandler {
 
             JSONParser parser = new JSONParser();
             JSONObject bodyResponse = (JSONObject) parser.parse(response.body());
+            System.out.println("bodyResponse " + bodyResponse);
             String access_token = (String) bodyResponse.get("access_token");
             String refresh_token = (String) bodyResponse.get("refresh_token"); // было бы славно сделать обновление токена
 
