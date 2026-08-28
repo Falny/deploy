@@ -4,11 +4,13 @@ import type { AppDispatch } from '../../redux/store'
 import { useDispatch } from 'react-redux'
 import { setIsAuth } from '../../redux/slices/OthersToggle'
 import { fetchGetAuthorizedYandex } from '../../redux/slices/LoginSlice'
+import { useToggleHook } from '../../HOOKS/ToggleHook'
 
 export default function SessionLoading() {
 	const dispatch = useDispatch<AppDispatch>()
 	const navigate = useNavigate()
-	const token = localStorage.getItem('token')
+	let token = localStorage.getItem('token')
+	const { isAuth } = useToggleHook()
 
 	React.useEffect(() => {
 		const howIsLogin = localStorage.getItem('howIsLogin')
@@ -50,7 +52,7 @@ export default function SessionLoading() {
 		}
 	}, [])
 
-	if (!token) {
+	if (!isAuth) {
 		return (
 			<div
 				className=''
@@ -62,7 +64,7 @@ export default function SessionLoading() {
 				}}
 			></div>
 		)
+	} else {
+		return <Outlet />
 	}
-
-	return <Outlet />
 }

@@ -6,6 +6,7 @@
 	padding: $mainPaddingOnMainPage; // паддинг вычисляет высоту в sideMain
 	display: flex;
 	gap: 30px;
+	height: 100vh;
 
 	@media (max-width: 700px) {
 		gap: 15px;
