@@ -41,11 +41,11 @@ services:
     depends_on:
       - db_flowers
     environment:
-      DB_URL: 'jdbc:postgresql://db_flowers:5432/${POSTGRES_DB}'
-      DB_USERNAME: ${POSTGRES_USER}
-      DB_PASSWORD: ${POSTGRES_PASSWORD}
-      IMAGE_PATH: /app/images/img
-      IMAGE_MAIN_PATH: /app/images/mainImg
+      DB_URL_FLOWERS: 'jdbc:postgresql://db_flowers:5432/db_flowers'
+      DB_USERNAME_FLOWERS: ${POSTGRES_USER}
+      DB_PASSWORD_FLOWERS: ${POSTGRES_PASSWORD}
+      IMAGE_PATH_FLOWERS: /app/images/img
+      IMAGE_MAIN_PATH_FLOWERS: /app/images/mainImg
     volumes:
       - flowers_images:/app/images
   frontend-admin_flowers:
@@ -83,6 +83,9 @@ services:
       DB_USERNAME: ${POSTGRES_USER_MANAGER}
       DB_PASSWORD: ${POSTGRES_PASSWORD_MANAGER}
       IMAGE_PATH: ${IMAGE_PATH_MANAGER}
+      CLIENT_SECRET: ${CLIENT_SECRET}
+      CLIENT_ID: ${CLIENT_ID}
+
     volumes:
       - profile:/app/images
   frontend_manager:

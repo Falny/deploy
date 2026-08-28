@@ -14,20 +14,18 @@ import java.util.Properties;
 
 
 @Component
-@PropertySource("db.properties")
 public class DBConnection {
-    @Value("${db.url}")
+    @Value("${DB_URL_FLOWERS}")
     private String url;
-    @Value("${db.username}")
+    @Value("${DB_USERNAME_FLOWERS}")
     private String username;
-    @Value("${db.password}")
+    @Value("${DB_PASSWORD_FLOWERS}")
     private String password;
 
     @PostConstruct
     public Connection connection(){
         try{
-
-        return DriverManager.getConnection(url, username, password);
+            return DriverManager.getConnection(url, username, password);
         } catch(SQLException e) {
             System.out.println("Error to connect to db "+ e);
             throw new RuntimeException("Error to connect to db");

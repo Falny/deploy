@@ -19,9 +19,9 @@ import java.util.*;
 @PropertySource("path-img.properties")
 public class GoodService {
     private GoodsDAO goodsDB;
-    @Value("${upload.path}")
+    @Value("${IMAGE_PATH_FLOWERS}")
     private String path;
-    @Value("${upload.pathMainImg}")
+    @Value("${IMAGE_MAIN_PATH_FLOWERS}")
     private String pathMainImg;
 
     public GoodService() {
