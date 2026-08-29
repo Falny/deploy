@@ -5,18 +5,10 @@ import Square from '../../assets/MainSection/square.png'
 import Lines from '../../assets/MainSection/lines.png'
 import Lines500 from '../../assets/MainSection/lines500.png'
 import Circle from '../../assets/MainSection/circle.png'
-import Text from '../../assets/MainSection/text.png'
-import Text500 from '../../assets/MainSection/text500.png'
-import Colors from '../../assets/MainSection/colors.png'
 
 import Main900 from '../../assets/MainSection/main.png'
 import Main700 from '../../assets/MainSection/main700.png'
 import Main500 from '../../assets/MainSection/main500.png'
-
-import LinesRotate_340 from '../../assets/MainSection/rotateLines_340px.png'
-import LinesRotate_180 from '../../assets/MainSection/rotateLines_180px.png'
-
-import useMotion from '../../Hook/useMotion'
 
 export default function MainSection({
 	refWorks,
@@ -26,9 +18,6 @@ export default function MainSection({
 	let textGreet = 'Привет!'
 	const [text, setText] = React.useState('')
 	const [index, setIndex] = React.useState(0)
-	const ref = React.useRef<HTMLDivElement>(null)
-
-	const isVisible = useMotion({ ref })
 
 	React.useEffect(() => {
 		if (index >= textGreet.length) return
@@ -88,63 +77,6 @@ export default function MainSection({
 						/>
 					</div>
 				</section>
-				{/* <section className='block-stek'>
-					<div
-						className={`block-circle ${isVisible ? 'block-circle_active' : ''}`}
-						ref={ref}
-					>
-						<div className='circle-container'>
-							<p className='_title circle-title'>
-								СТЕК
-								<span className='arrow-circle'></span>
-							</p>
-							<span className='circle-name size circle1'>JavaScript</span>
-							<span className='circle-name size circle2'>Java</span>
-							<span className='circle-name size circle3'>Spring</span>
-							<span className='circle-name size circle4'>Postgresql</span>
-							<span className='circle-name size circle5'>TypeScript</span>
-							<span className='circle-name size circle6'>React</span>
-							<div className='circle-main'></div>
-						</div>
-					</div>
-					<img
-						src={Circle}
-						alt='circles'
-						className='block-circle_img-circle'
-						loading='lazy'
-					/>
-					<picture>
-						<source srcSet={LinesRotate_180} media='(max-width:640px)' />
-						<img
-							src={LinesRotate_340}
-							className='block-circle_img-lines'
-							alt='lines'
-							loading='lazy'
-							width={340}
-							height={60}
-						/>
-					</picture>
-					<picture>
-						<source srcSet={Text500} media='(max-width:640px)' />
-						<img
-							srcSet={Text}
-							className='block-circle_img-text'
-							sizes='(max-width: 640px) 640px, 1920px'
-							alt='text'
-							loading='lazy'
-							width={70}
-							height={500}
-						/>
-					</picture>
-					<img
-						src={Colors}
-						alt='colors'
-						className='block-circle_img-colors'
-						loading='lazy'
-						width={90}
-						height={110}
-					/>
-				</section> */}
 			</div>
 		</section>
 	)
