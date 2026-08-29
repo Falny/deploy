@@ -72,7 +72,7 @@ export default function Price({
 								</div>
 								<ul className='price-text_list'>
 									<li className='price-text_item size'>
-										Авторицаия и регистрация
+										Авторизация и регистрация
 									</li>
 									<li className='price-text_item size'>
 										Административная панель
