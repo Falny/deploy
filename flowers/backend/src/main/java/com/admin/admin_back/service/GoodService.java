@@ -16,7 +16,6 @@ import java.nio.file.Paths;
 import java.util.*;
 
 @Component
-@PropertySource("path-img.properties")
 public class GoodService {
     private GoodsDAO goodsDB;
     @Value("${IMAGE_PATH_FLOWERS}")

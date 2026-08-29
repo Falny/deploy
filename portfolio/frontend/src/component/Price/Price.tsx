@@ -43,23 +43,23 @@ export default function Price({
 						>
 							<div className='price-wrapper'>
 								<div className='price-block_price-title text-size_p'>
-									По самому проекту
+									Разработка сайта
 								</div>
-								<div className='price-block_text'>
-									<ul className='price-text_list'>
-										<li className='price-text_item size'>Нарисовать дизайн</li>
-										<li className='price-text_item size note-seo'>
-											базовое SEO
-											{seo()}
-										</li>
-										<li className='price-text_item size'>Адаптивная верстка</li>
-										<li className='price-text_item size'>
-											Подключение базы данных
-										</li>
-										<li className='price-text_item size'>Серверная часть</li>
-										<li className='price-text_item size'>Деплой сайта</li>
-									</ul>
-								</div>
+								<ul className='price-text_list'>
+									<li className='price-text_item size'>Дизайн интерфейса</li>
+									<li className='price-text_item size note-seo'>
+										базовое SEO настройка
+										{seo()}
+									</li>
+									<li className='price-text_item size'>Адаптивная верстка</li>
+									<li className='price-text_item size'>
+										Подключение базы данных
+									</li>
+									<li className='price-text_item size'>Серверная часть</li>
+									<li className='price-text_item size'>
+										Публикация сайта в интернет
+									</li>
+								</ul>
 							</div>
 						</div>
 						<div
@@ -68,30 +68,78 @@ export default function Price({
 						>
 							<div className='price-wrapper'>
 								<div className='price-block_price-title text-size_p'>
-									По наполнению проекта
+									Функциональность
 								</div>
-								<div className='price-block_text'>
-									<ul className='price-text_list'>
-										<li className='price-text_item size'>Формы связи</li>
-										<li className='price-text_item size'>Корзина</li>
-										<li className='price-text_item size'>
-											Авторицаия / Регистрация
-										</li>
-										<li className='price-text_item size'>Админ панель</li>
-										<li className='price-text_item size'>Анимации</li>
-										<li className='price-text_item size'>Фильтры</li>
-										<li className='price-text_item size'>Поиск</li>
-										<li className='price-text_item size'>Навигация</li>
-										<li className='price-text_item size'>Дашборды</li>
-										<li className='price-text_item size'>Графики</li>
-										<li className='price-text_item size'>Профиль</li>
-									</ul>
+								<ul className='price-text_list'>
+									<li className='price-text_item size'>
+										Авторицаия и регистрация
+									</li>
+									<li className='price-text_item size'>
+										Административная панель
+									</li>
+									<li className='price-text_item size'>
+										Анимации и интерактивные элементы
+									</li>
+									<li className='price-text_item size'>
+										Загрузка файлов и изображений
+									</li>
+									<li className='price-text_item size'>
+										Интеграция с внешними сервисами
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div
+							className='price-block_price'
+							style={{ '--order': 3 } as React.CSSProperties}
+						>
+							<div className='price-wrapper'>
+								<div className='price-block_price-title text-size_p'>
+									Наполнение
 								</div>
+								<ul className='price-text_list'>
+									<li className='price-text_item size'>Формы обратной связи</li>
+									<li className='price-text_item size'>
+										Корзина и оформление заказа
+									</li>
+									<li className='price-text_item size'>Поиск и фильтрация</li>
+									<li className='price-text_item size'>Навигация</li>
+									<li className='price-text_item size'>Дашборды</li>
+									<li className='price-text_item size'>Графики и статистика</li>
+									<li className='price-text_item size'>Профиль</li>
+								</ul>
+							</div>
+						</div>
+						<div
+							className='price-block_price'
+							style={{ '--order': 4 } as React.CSSProperties}
+						>
+							<div className='price-wrapper'>
+								<div className='price-block_price-title text-size_p'>
+									Доработка существующего проекта
+								</div>
+								<ul className='price-text_list'>
+									<li className='price-text_item size'>Исправление ошибок</li>
+									<li className='price-text_item size'>
+										Добавление нового функционала
+									</li>
+									<li className='price-text_item size'>Обновление дизайна</li>
+									<li className='price-text_item size'>Улучшение интерфейса</li>
+									<li className='price-text_item size'>
+										Адаптация под мобильные устройства
+									</li>
+									<li className='price-text_item size'>
+										Исправление проблем с отображением
+									</li>
+									<li className='price-text_item size'>
+										Помощь с доменом и SSL сертификатом
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 					<p className='price-text size'>
-						*Стоймость для каждого проекта расчитывается индивидуально
+						*Стоимость для каждого проекта расчитывается индивидуально
 					</p>
 					<picture
 						className='price-item3'

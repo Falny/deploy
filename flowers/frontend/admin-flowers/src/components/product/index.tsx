@@ -26,7 +26,7 @@ export const Product = () => {
 					{product.map(obj => (
 						<div className='block-item'>
 							<li className='product-item' key={obj.id}>
-								<Link to={`/product/${obj.id}`} className='item-link'>
+								<Link to={`${obj.id}`} className='item-link'>
 									<img src={obj.mainImg} alt='' className='product-img' />
 									{obj.name}; {obj.price};
 								</Link>

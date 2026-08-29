@@ -88,7 +88,7 @@ export default function MainSection({
 						/>
 					</div>
 				</section>
-				<section className='block-stek'>
+				{/* <section className='block-stek'>
 					<div
 						className={`block-circle ${isVisible ? 'block-circle_active' : ''}`}
 						ref={ref}
@@ -144,7 +144,7 @@ export default function MainSection({
 						width={90}
 						height={110}
 					/>
-				</section>
+				</section> */}
 			</div>
 		</section>
 	)

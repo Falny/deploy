@@ -31,51 +31,46 @@ export default function WhoAmI({
 							className='who-text_section who-item'
 							style={{ '--order': 3 } as React.CSSProperties}
 						>
-							<p className='who-text_header text-size_p'>Обсудим задачу</p>
-							<p className='who-text'>
-								Разберемся, что вы хотите сделать, как вы это видите, для кого
-								предназначен продукт
-							</p>
+							<p className='who-text_header text-size_p'>Обсуждаем задачу</p>
+							<p className='who-text'>Определеяем цели и задачи проекта</p>
 							<span className='who-arrow'>&#8595;</span>
 						</div>
 						<div
 							className='who-text_section who-item'
 							style={{ '--order': 4 } as React.CSSProperties}
 						>
-							<p className='who-text_header text-size_p'>
-								Спроектируем решение
+							<p className='who-text_header text-size_p'>Продумываем решение</p>
+							<p className='who-text size'>
+								Создаем структуру и план разработки
 							</p>
-							<p className='who-text size'>Определим структуру сайта</p>
 							<span className='who-arrow'>&#8595;</span>
 						</div>
 						<div
 							className='who-text_section who-item'
 							style={{ '--order': 5 } as React.CSSProperties}
 						>
-							<p className='who-text_header text-size_p'>Разработка</p>
-							<p className='who-text size'>Превращаем идею в сайт</p>
+							<p className='who-text_header text-size_p'>Разрабатываем</p>
+							<p className='who-text size'>Превращаем идею в готовый продукт</p>
 							<span className='who-arrow'>&#8595;</span>
 						</div>
 						<div
 							className='who-text_section who-item'
 							style={{ '--order': 6 } as React.CSSProperties}
 						>
-							<p className='who-text_header text-size_p'>Завершение</p>
-							<p className='who-text size'>Ваш проект публикуется в интернет</p>
+							<p className='who-text_header text-size_p'>Запускаем</p>
+							<p className='who-text size'>Публикуем проект в интернете</p>
 						</div>
 					</div>
 					<div
 						className='who-text_left who-item'
 						style={{ '--order': 2 } as React.CSSProperties}
 					>
+						<p className='who-text size'>Создаю интерфейсы и серверную часть</p>
 						<p className='who-text size'>
-							Занимаюсь интерфейсом и серверной частью
+							Превращаю идеи в удобные и современные цифровые продукты
 						</p>
 						<p className='who-text size'>
-							Перевожу ваши мысли в строчки кода, красивую картинку и пользу
-						</p>
-						<p className='who-text size'>
-							Важно качество, удобство и удовлетворенность клиента
+							Для меня важны качество, удобство и результат
 						</p>
 					</div>
 					<picture

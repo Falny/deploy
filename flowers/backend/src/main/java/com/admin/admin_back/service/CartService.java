@@ -19,12 +19,11 @@ import java.util.Base64;
 import java.util.List;
 import java.util.UUID;
 
-@PropertySource("path-img.properties")
 @Component
 public class CartService {
     private CartDAO db;
     private GoodsDAO dbGood;
-    @Value("path-img.pathMainImg")
+    @Value("IMAGE_PATH_FLOWERS")
     private String path;
 
     @Autowired

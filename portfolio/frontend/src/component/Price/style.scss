@@ -30,7 +30,8 @@
 			height: 100%;
 			display: flex;
 			justify-content: center;
-			align-items: center;
+			align-items: start;
+			flex-wrap: wrap;
 			gap: 4rem;
 
 			@media (max-width: 1250px) {
@@ -40,6 +41,14 @@
 				flex-wrap: wrap;
 				justify-content: center;
 			}
+			@media (max-width: 590px) {
+				&:nth-child(2n) {
+					justify-content: flex-end;
+				}
+				&:nth-child(2n + 1) {
+					justify-content: flex-start;
+				}
+			}
 
 			.price-block_price {
 				opacity: 0;
@@ -47,9 +56,18 @@
 				transition: all 0.8s ease;
 				transition-delay: calc(var(--order) * 300ms);
 
+				@media (max-width: 590px) {
+					&:nth-child(2n) {
+						margin: 0 0 0 auto;
+					}
+					&:nth-child(2n + 1) {
+						margin: 0 auto 0 0;
+					}
+				}
+
 				.price-wrapper {
 					width: max-content;
-					min-height: 25rem;
+					min-height: 18rem;
 					height: 100%;
 					display: flex;
 					flex-direction: column;
@@ -66,84 +84,78 @@
 						transition: all 0.3s ease;
 					}
 
-					@media (max-width: 900px) {
-						min-height: 25rem;
+					@media (max-width: 750px) {
+						width: 20rem;
+						padding: 15px 5px;
 					}
-					@media (max-width: 500px) {
-						min-height: 22rem;
-					}
-					@media (max-width: 400px) {
-						min-height: 19rem;
+					@media (max-width: 750px) {
+						width: 16rem;
 					}
 				}
 
 				.price-block_price-title {
 					color: $orangeColor;
 					text-align: center;
-					margin-bottom: 2rem;
+					margin-bottom: 1rem;
 				}
 
-				.price-block_text {
+				.price-text_list {
 					flex-grow: 1;
 					display: flex;
 					flex-direction: column;
-					justify-content: space-between;
+					position: relative;
+					padding-left: 1rem;
 
-					.price-text_list {
+					.note-seo {
+						border-bottom: 1px dashed #252525;
+						width: fit-content;
 						position: relative;
-						padding-left: 1rem;
 
-						.note-seo {
-							border-bottom: 1px dashed #252525;
-							width: fit-content;
-							position: relative;
+						.seo-note_list {
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 0;
+							height: 0;
+							opacity: 0;
+							pointer-events: none;
+							transition: all 0.3s;
 
-							.seo-note_list {
-								position: absolute;
-								left: 0;
-								top: 0;
-								width: 0;
-								height: 0;
+							.seo-note_item {
 								opacity: 0;
-								pointer-events: none;
-								transition: all 0.3s;
-
-								.seo-note_item {
-									opacity: 0;
-								}
-							}
-
-							&:hover {
-								.seo-note_list {
-									position: absolute;
-									left: 0;
-									top: -100%;
-									width: max-content;
-									height: fit-content;
-									opacity: 1;
-									background-color: rgba($color: $orangeColor, $alpha: 0.95);
-									border-radius: 15px;
-									padding: 5px 20px;
-									font-size: 13px;
-									transition: all 0.3s;
-
-									.seo-note_item {
-										color: #000;
-										list-style-type: '- ';
-										opacity: 1;
-									}
-								}
 							}
 						}
 
-						.price-text_item {
-							list-style-type: '- ';
-							text-transform: lowercase;
-							cursor: default;
+						&:hover {
+							.seo-note_list {
+								position: absolute;
+								left: 0;
+								top: -100%;
+								width: max-content;
+								height: fit-content;
+								opacity: 1;
+								background-color: rgba($color: $orangeColor, $alpha: 0.95);
+								border-radius: 15px;
+								padding: 5px 20px;
+								font-size: 13px;
+								transition: all 0.3s;
 
-							&::first-letter {
-								text-transform: uppercase;
+								.seo-note_item {
+									color: #000;
+									list-style-type: '- ';
+									opacity: 1;
+								}
 							}
+						}
+					}
+
+					.price-text_item {
+						list-style-type: '- ';
+						text-transform: lowercase;
+						cursor: default;
+
+						&::first-letter {
+							text-transform: uppercase;
 						}
 					}
 
