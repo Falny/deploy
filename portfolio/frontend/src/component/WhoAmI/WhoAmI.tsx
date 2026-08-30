@@ -32,7 +32,7 @@ export default function WhoAmI({
 							style={{ '--order': 3 } as React.CSSProperties}
 						>
 							<p className='who-text_header text-size_p'>Обсуждаем задачу</p>
-							<p className='who-text'>Определеяем цели и задачи проекта</p>
+							<p className='who-text'>Определяем цели и задачи проекта</p>
 							<span className='who-arrow'>&#8595;</span>
 						</div>
 						<div

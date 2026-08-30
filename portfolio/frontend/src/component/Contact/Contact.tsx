@@ -200,7 +200,7 @@ export default function Contact({
 									}}
 									onChange={e => changeTextarea(e)}
 									className='contact-form_area size'
-									placeholder='Опишите, чтобы вы хотели сделать'
+									placeholder='Опишите, что бы вы хотели сделать'
 									value={text}
 								></textarea>
 							</label>

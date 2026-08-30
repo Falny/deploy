@@ -33,7 +33,7 @@ export default function Price({
 			<div className='container'>
 				<div className='price-container'>
 					<p className='_title price-title' ref={refPrice}>
-						предложения
+						услуги
 						<span className='arrow-circle'></span>
 					</p>
 					<div className='price-price'>
@@ -48,7 +48,7 @@ export default function Price({
 								<ul className='price-text_list'>
 									<li className='price-text_item size'>Дизайн интерфейса</li>
 									<li className='price-text_item size note-seo'>
-										базовое SEO настройка
+										базовая SEO настройка
 										{seo()}
 									</li>
 									<li className='price-text_item size'>Адаптивная верстка</li>
@@ -139,7 +139,7 @@ export default function Price({
 						</div>
 					</div>
 					<p className='price-text size'>
-						*Стоимость для каждого проекта расчитывается индивидуально
+						*Стоимость для каждого проекта рассчитывается индивидуально
 					</p>
 					<picture
 						className='price-item3'

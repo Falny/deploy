@@ -18,7 +18,7 @@ export default function Navigation({
 	const listNav: { nav: string; ref?: React.RefObject<HTMLElement | null> }[] =
 		[
 			{ nav: 'Работы', ref: refWorks },
-			{ nav: 'Предложения', ref: refPrice },
+			{ nav: 'услуги', ref: refPrice },
 			{ nav: 'Обо мне', ref: refAbout },
 			{ nav: 'Контакты', ref: refContact },
 		]

@@ -54,7 +54,7 @@ export default function MainSection({
 								Я разрабатываю сайты
 							</p>
 							<p className='main-block_text-greeting size'>
-								Все что угодно из ваших идей, я могу реализовать в коде
+								Реализую в коде любую вашу идею
 							</p>
 							<p className='main-block_text-nav' onClick={() => handleScroll()}>
 								Посмотрите, что я могу вам предложить
