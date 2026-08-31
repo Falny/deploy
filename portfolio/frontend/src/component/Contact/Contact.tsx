@@ -25,7 +25,7 @@ export default function Contact({
 	const [tel, setTel] = React.useState('')
 	const [text, setText] = React.useState('')
 	const [errorOrAccept, setErrorOrAccept] = React.useState('')
-	// const [isVisible, setIsVisible] = React.useState(false)
+	const [agree, setAgree] = React.useState(false)
 	const ref = React.useRef<HTMLDivElement>(null)
 
 	const isVisible = useMotion({ ref })
@@ -204,8 +204,46 @@ export default function Contact({
 									value={text}
 								></textarea>
 							</label>
+							<div className='contact-agree_block'>
+								<div
+									className='contact-agree_checkbox'
+									onClick={() => setAgree(!agree)}
+								>
+									<input
+										type='checkbox'
+										className='contact-agree_checkbox-hidden'
+									/>
+									<div
+										className={`${agree ? 'contact-agree_checkbox-show--active' : 'contact-agree_checkbox-show'}`}
+									></div>
+								</div>
+								<p className='contact-agree_text mini-size'>
+									Нажимая кнопку, я даю
+									<a
+										href='/agreement'
+										className='contact-agree_link mini-size'
+										target='_blank'
+									>
+										{' '}
+										Согласие на обработку персональных данных{' '}
+									</a>
+									и принимаю условия
+									<a
+										href='/policy'
+										className='contact-agree_link mini-size'
+										target='_blank'
+									>
+										{' '}
+										Политики конфиденциальности
+									</a>
+									.
+								</p>
+							</div>
 						</form>
-						<button className='btn-contact size' onClick={() => handlerForm()}>
+						<button
+							className={`btn-contact size ${agree ? '' : ''}`}
+							onClick={() => agree && handlerForm()}
+						>
 							Отправить
 						</button>
 					</div>

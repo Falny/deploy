@@ -217,6 +217,51 @@
 						resize: none;
 					}
 				}
+
+				.contact-agree_block {
+					display: flex;
+					gap: 1rem;
+
+					.contact-agree_checkbox {
+						position: relative;
+
+						.contact-agree_checkbox-hidden {
+							background-color: transparent;
+							width: 13px;
+							height: 13px;
+							appearance: none;
+						}
+
+						.contact-agree_checkbox-show {
+							position: absolute;
+							top: 5px;
+							left: 0;
+							width: 13px;
+							height: 13px;
+							border: 1px solid $orangeColor;
+							border-radius: 2px;
+
+							&--active {
+								position: absolute;
+								top: 5px;
+								left: 0;
+								width: 13px;
+								height: 13px;
+								background-color: $orangeColor;
+								border-radius: 2px;
+							}
+						}
+					}
+
+					.contact-agree_text {
+						color: $orangeColor;
+
+						.contact-agree_link {
+							color: $orangeColor;
+							text-decoration: underline;
+						}
+					}
+				}
 			}
 
 			.btn-contact {
