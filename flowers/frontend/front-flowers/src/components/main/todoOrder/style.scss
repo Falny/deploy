@@ -1,140 +1,140 @@
-@use "../../../index.scss" as *;
+@use '../../../index.scss' as *;
 
 .todo-order {
-  margin-top: 160px;
-  text-transform: uppercase;
-  min-height: 100vh;
+	margin-top: 160px;
+	text-transform: uppercase;
+	min-height: 100vh;
 
-  @media (max-width: 550px) {
-    margin-top: 80px;
-  }
+	@media (max-width: 550px) {
+		margin-top: 80px;
+	}
 
-  .todo-order_flower-back {
-    background-image: url("../../../assets/main/todoOrder/rouse.png");
-    background-repeat: no-repeat;
-    background-position: left center;
-    position: relative;
+	.todo-order_flower-back {
+		background-image: url('../../../assets/main/todoOrder/rouse.png');
+		background-repeat: no-repeat;
+		background-position: left center;
+		position: relative;
 
-    @media (max-width: 700px) {
-      background-size: 40% 70%;
-    }
+		@media (max-width: 700px) {
+			background-size: 40% 70%;
+		}
 
-    @media (max-width: 450px) {
-      background-size: 40% 50%;
-      background-position: left 0 top 0;
-    }
+		@media (max-width: 450px) {
+			background-size: 40% 50%;
+			background-position: left 0 top 0;
+		}
 
-    @media (max-width: 320px) {
-      background-size: 40% 40%;
-    }
-  }
+		@media (max-width: 320px) {
+			background-size: 40% 40%;
+		}
+	}
 
-  .to-title {
-    position: relative;
-    z-index: -1;
+	.to-title {
+		position: relative;
+		z-index: -1;
 
-    @media (max-width: 1200px) {
-      z-index: 1;
-    }
-  }
+		@media (max-width: 1200px) {
+			z-index: 1;
+		}
+	}
 
-  .todo-order-block {
-    display: flex;
-    flex-direction: column;
-    justify-self: end;
-    border-right: 1px solid #d978ac;
+	.todo-order-block {
+		display: flex;
+		flex-direction: column;
+		justify-self: end;
+		border-right: 1px solid #d978ac;
 
-    @media (max-width: 600px) {
-      border: none;
-    }
+		@media (max-width: 600px) {
+			border: none;
+		}
 
-    @media (max-width: 450px) {
-      justify-self: start;
-    }
+		@media (max-width: 450px) {
+			justify-self: start;
+		}
 
-    .todo-order_list {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 40px 100px;
-      padding-right: 105px;
-      margin-top: 65px;
-      max-height: 460px;
-      flex-wrap: wrap;
-      width: fit-content;
+		.todo-order_list {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			gap: 40px 100px;
+			padding-right: 105px;
+			margin-top: 65px;
+			max-height: 460px;
+			flex-wrap: wrap;
+			width: fit-content;
 
-      @media (max-width: 700px) {
-        gap: 30px 70px;
-      }
+			@media (max-width: 700px) {
+				gap: 30px 70px;
+			}
 
-      @media (max-width: 650px) {
-        gap: 20px;
-        max-height: 400px;
-      }
+			@media (max-width: 650px) {
+				gap: 20px;
+				max-height: 400px;
+			}
 
-      @media (max-width: 450px) {
-        max-height: fit-content;
-        width: 100vw;
-        padding: 0;
-      }
+			@media (max-width: 450px) {
+				max-height: fit-content;
+				width: 90vw;
+				padding: 0;
+			}
 
-      @media (max-width: 390px) {
-        gap: 10px;
-      }
+			@media (max-width: 390px) {
+				gap: 10px;
+			}
 
-      .todo-order_pink {
-        position: absolute;
-        top: -10%;
-        left: 0;
-        display: block;
-        width: 65px;
-        height: 10px;
-        @include backPink;
-      }
+			.todo-order_pink {
+				position: absolute;
+				top: -10%;
+				left: 0;
+				display: block;
+				width: 65px;
+				height: 10px;
+				@include backPink;
+			}
 
-      .tr_item {
-        max-width: 265px;
+			.tr_item {
+				max-width: 265px;
 
-        @media (max-width: 600px) {
-          max-width: 200px;
-        }
+				@media (max-width: 600px) {
+					max-width: 200px;
+				}
 
-        @media (max-width: 450px) {
-          &:nth-of-type(1) {
-            margin-left: auto;
-          }
-          &:nth-of-type(2) {
-            margin: auto;
-          }
-        }
+				@media (max-width: 450px) {
+					&:nth-of-type(1) {
+						margin-left: auto;
+					}
+					&:nth-of-type(2) {
+						margin: auto;
+					}
+				}
 
-        .tr_item-title {
-          font-weight: 700;
-          font-size: 30px;
-          margin-bottom: 12px;
-          @include colorPink;
+				.tr_item-title {
+					font-weight: 700;
+					font-size: 30px;
+					margin-bottom: 12px;
+					@include colorPink;
 
-          @media (max-width: 970px) {
-            font-size: 24px;
-          }
+					@media (max-width: 970px) {
+						font-size: 24px;
+					}
 
-          @media (max-width: 700px) {
-            font-size: 17px;
-          }
-          @media (max-width: 390px) {
-            font-size: 14px;
-          }
-        }
+					@media (max-width: 700px) {
+						font-size: 17px;
+					}
+					@media (max-width: 390px) {
+						font-size: 14px;
+					}
+				}
 
-        .tr_item-text {
-          @include insideText;
-        }
-      }
-    }
-  }
+				.tr_item-text {
+					@include insideText;
+				}
+			}
+		}
+	}
 
-  .tr-img {
-    display: flex;
-    justify-self: end;
-  }
+	.tr-img {
+		display: flex;
+		justify-self: end;
+	}
 }

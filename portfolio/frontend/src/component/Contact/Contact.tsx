@@ -20,7 +20,6 @@ export default function Contact({
 	refContact: React.RefObject<null>
 }) {
 	const [heightTextArea, setHeightTextarea] = React.useState(50)
-	// const [agreement, setAgreement] = React.useState()
 	const [name, setName] = React.useState('')
 	const [tel, setTel] = React.useState('')
 	const [text, setText] = React.useState('')

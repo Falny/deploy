@@ -1,343 +1,345 @@
-@use "../../../index.scss" as *;
+@use '../../../index.scss' as *;
 
 .question-inst {
-  background-color: rgb(10, 23, 23);
-  background-blend-mode: multiply;
-  margin-top: 160px;
+	background-color: rgb(10, 23, 23);
+	background-blend-mode: multiply;
+	margin-top: 160px;
 
-  @media (max-width: 550px) {
-    margin-top: 80px;
-  }
+	@media (max-width: 550px) {
+		margin-top: 80px;
+	}
 
-  //цветки зеленые
-  .qi_back-img {
-    background-image: url("../../../assets/main/questionInst/leaf.png");
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    width: 50%;
-    height: 20%;
-    z-index: 100;
+	//цветки зеленые
+	.qi_back-img {
+		background-image: url('../../../assets/main/questionInst/leaf.png');
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 0;
+		width: 50%;
+		height: 20%;
+		z-index: 100;
 
-    @media (max-width: 910px) {
-      transform: scale(0.5);
-      left: -20%;
-      width: 80%;
-    }
+		@media (max-width: 910px) {
+			transform: scale(0.5);
+			left: -20%;
+			width: 80%;
+		}
 
-    @media (max-width: 750px) {
-      left: 40%;
-      bottom: 17%;
-      transform: scale(-1, 1) scale(0.5);
-    }
+		@media (max-width: 750px) {
+			left: 40%;
+			bottom: 17%;
+			transform: scale(-1, 1) scale(0.5);
+		}
 
-    @media (max-width: 700px) {
-      bottom: 23%;
-    }
+		@media (max-width: 700px) {
+			bottom: 23%;
+		}
 
-    @media (max-width: 600px) {
-      transform: scale(-1, 1) scale(0.3);
-      left: 43%;
-      bottom: 23%;
-      width: 90%;
-    }
+		@media (max-width: 600px) {
+			transform: scale(-1, 1) scale(0.3);
+			left: 41%;
+			bottom: 23%;
+			width: 90%;
+		}
 
-    @media (max-width: 520px) {
-      display: none;
-    }
-  }
-  //цветки зеленые
+		@media (max-width: 520px) {
+			display: none;
+		}
+	}
+	//цветки зеленые
 
-  //блок специально для подсветки
-  .qi-block {
-    position: relative;
-    z-index: 10;
+	//блок специально для подсветки
+	.qi-block {
+		position: relative;
+		z-index: 10;
 
-    .qi-pink {
-      position: absolute;
-      top: 35%;
-      left: -15%;
-      rotate: 90deg;
-      z-index: -1;
-      rotate: -50deg;
-    }
+		.qi-pink {
+			position: absolute;
+			top: 35%;
+			left: -15%;
+			rotate: 90deg;
+			z-index: -1;
+			rotate: -50deg;
+		}
 
-    .qi-green {
-      rotate: 45deg;
-      position: absolute;
-      bottom: 30%;
-      left: 25%;
-    }
-  }
-  //блок специально для подсветки
+		.qi-green {
+			rotate: 45deg;
+			position: absolute;
+			bottom: 30%;
+			left: 25%;
+		}
+	}
+	//блок специально для подсветки
 
-  //верх блока с заголовком и инфо
-  .qi-top {
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	//верх блока с заголовком и инфо
+	.qi-top {
+		padding-top: 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-    @media (max-width: 835px) {
-      flex-direction: column;
-      justify-content: start;
-      align-items: start;
-    }
+		@media (max-width: 835px) {
+			flex-direction: column;
+			justify-content: start;
+			align-items: start;
+		}
 
-    .qi-title-second {
-      margin-left: 80px;
-    }
-  }
+		.qi-title-second {
+			margin-left: 80px;
+		}
+	}
 
-  .qi_block-text {
-    gap: 55px;
-    max-width: 255px;
-    margin-bottom: 20px;
-    @include displayColumn;
+	.qi_block-text {
+		gap: 55px;
+		max-width: 255px;
+		margin-bottom: 20px;
+		@include displayColumn;
 
-    .qi-stick {
-      display: block;
-      height: 1px;
-      width: 255px;
-      @include backGreen;
-    }
+		.qi-stick {
+			display: block;
+			height: 1px;
+			width: 255px;
+			@include backGreen;
+		}
 
-    .qi-text {
-      font-size: 16px;
+		.qi-text {
+			font-size: 16px;
 
-      @media (max-width: 700px) {
-        font-size: 14px;
-      }
-      @media (max-width: 390px) {
-        font-size: 12px;
-        font-weight: 300;
-      }
-    }
-  }
-  //верх блока с заголовком и инфо
+			@media (max-width: 700px) {
+				font-size: 14px;
+			}
+			@media (max-width: 390px) {
+				font-size: 12px;
+				font-weight: 300;
+			}
+		}
+	}
+	//верх блока с заголовком и инфо
 
-  //подпись по середине
-  .qi-signatura {
-    position: absolute;
-    left: 30%;
+	//подпись по середине
+	.qi-signatura {
+		position: absolute;
+		left: 30%;
 
-    @media (max-width: 1200px) {
-      display: none;
-    }
-  }
-  //подпись по середине
+		@media (max-width: 1200px) {
+			display: none;
+		}
+	}
+	//подпись по середине
 
-  //внутриности формы
-  .qi_block-form {
-    display: flex;
-    justify-content: end;
+	//внутриности формы
+	.qi_block-form {
+		display: flex;
+		justify-content: end;
 
-    @media (max-width: 520px) {
-      justify-content: start;
-    }
+		@media (max-width: 520px) {
+			justify-content: start;
+		}
 
-    .qi-form {
-      margin-bottom: 55px;
-      align-items: start;
-      gap: 10px;
-      @include displayColumn;
+		.qi-form {
+			margin-bottom: 55px;
+			align-items: start;
+			gap: 10px;
+			@include displayColumn;
 
-      .qi-input {
-        width: 445px;
-        height: 60px;
-        background-color: transparent;
-        border: 1px solid #43ffd2;
-        padding-left: 20px;
-        color: #fff;
-        @include insideText;
-        @include familyOswald;
+			.qi-input {
+				width: 445px;
+				height: 60px;
+				background-color: transparent;
+				border: 1px solid #43ffd2;
+				padding-left: 20px;
+				color: #fff;
+				@include insideText;
+				@include familyOswald;
 
-        @media (max-width: 520px) {
-          width: 300px;
-        }
-        @media (max-width: 390px) {
-          width: 260px;
-          height: 40px;
-        }
-        @media (max-width: 320px) {
-          width: 230px;
-          height: 40px;
-        }
+				@media (max-width: 520px) {
+					width: 300px;
+				}
+				@media (max-width: 390px) {
+					width: 260px;
+					height: 40px;
+				}
+				@media (max-width: 320px) {
+					width: 230px;
+					height: 40px;
+				}
 
-        &::placeholder {
-          color: #395959;
-          @include insideText;
-        }
-      }
+				&::placeholder {
+					color: #395959;
+					@include insideText;
+				}
+			}
 
-      .qi-comment {
-        height: 120px;
-        text-align: start;
-        resize: none;
-        padding-top: 19px;
-      }
+			.qi-comment {
+				height: 120px;
+				text-align: start;
+				resize: none;
+				padding-top: 19px;
+			}
 
-      .qi-btn {
-        margin: 20px 0 10px;
-        @include btn;
-      }
-      .qi-policy {
-        max-width: 342px;
-        @include policy;
-      }
-    }
-  }
-  //внутриности формы
+			.qi-btn {
+				margin: 20px 0 10px;
+				@include btn;
+			}
+			.qi-policy {
+				max-width: 342px;
+				@include policy;
+			}
+		}
+	}
+	//внутриности формы
 }
 
 // BLOCK INST
 
 .block-inst {
-  margin-top: 260px;
-  position: relative;
-  min-height: 30vh;
+	margin-top: 260px;
+	position: relative;
+	min-height: 30vh;
 
-  
-  @media (max-width: 900px) {
-    margin-top: 150px;
-  }
-  @media (max-width: 550px) {
-    margin-top: 80px;
-  }
+	@media (max-width: 900px) {
+		margin-top: 150px;
+	}
+	@media (max-width: 550px) {
+		margin-top: 80px;
+	}
 
-  .inst-pink {
-    position: absolute;
-    right: 5%;
-    bottom: -5%;
-    rotate: 45deg;
-  }
+	.inst-pink {
+		position: absolute;
+		right: 5%;
+		bottom: -5%;
+		rotate: 45deg;
+	}
 
-  .inst-green {
-    position: absolute;
-    bottom: -40%;
-    left: 30%;
-  }
+	.inst-green {
+		position: absolute;
+		bottom: -40%;
+		left: 30%;
+	}
 
-  .inst-green-last {
-    position: absolute;
-    left: -10%;
-    bottom: 0%;
-    rotate: -45deg;
-  }
+	.inst-green-last {
+		position: absolute;
+		left: -10%;
+		bottom: 0%;
+		rotate: -45deg;
+	}
 
-  .bi-text-inst {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: absolute;
-    font-weight: 700;
-    @include backText;
+	.bi-text-inst {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		position: absolute;
+		font-weight: 700;
+		@include backText;
 
-    @media (max-width: 1400px) {
-      top: 10%;
-    }
-    @media (max-width: 900px) {
-      top: 30%;
-      left: 5%;
-    }
-    @media (max-width: 470px) {
-      display: none;
-    }
-  }
+		@media (max-width: 1400px) {
+			top: 10%;
+		}
+		@media (max-width: 900px) {
+			top: 30%;
+			left: 2%;
+		}
+		@media (max-width: 500px) {
+			left: -3%;
+		}
+		@media (max-width: 470px) {
+			display: none;
+		}
+	}
 
-  .block-inst_common {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
+	.block-inst_common {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
 
-    @media (max-width: 520px) {
-      flex-direction: column-reverse;
-      gap: 60px;
-    }
+		@media (max-width: 520px) {
+			flex-direction: column-reverse;
+			gap: 60px;
+		}
 
-    .bi-images {
-      display: flex;
-      gap: 50px;
+		.bi-images {
+			display: flex;
+			gap: 50px;
 
-      @media (max-width: 1200px) {
-        gap: 25px;
-        max-width: 400px;
-        flex-wrap: wrap;
-        margin: 0 auto;
-      }
+			@media (max-width: 1200px) {
+				gap: 25px;
+				max-width: 400px;
+				flex-wrap: wrap;
+				margin: 0 auto;
+			}
 
-      @media (max-width: 390px) {
-        img {
-          width: 120px;
-          height: 120px;
-        }
-      }
-      @media (max-width: 320px) {
-        img {
-          width: 100px;
-          height: 100px;
-        }
-      }
-    }
+			@media (max-width: 390px) {
+				img {
+					width: 120px;
+					height: 120px;
+				}
+			}
+			@media (max-width: 320px) {
+				img {
+					width: 100px;
+					height: 100px;
+				}
+			}
+		}
 
-    .bi_signatura-stick {
-      position: absolute;
-      top: -40%;
-      right: 30%;
+		.bi_signatura-stick {
+			position: absolute;
+			top: -40%;
+			right: 30%;
 
-      @media (max-width: 1500px) {
-        top: -40%;
-        right: 0;
-      }
+			@media (max-width: 1500px) {
+				top: -40%;
+				right: 0;
+			}
 
-      @media (max-width: 1320px) {
-        transform: scale(0.7);
-      }
+			@media (max-width: 1320px) {
+				transform: scale(0.7);
+			}
 
-      @media (max-width: 520px) {
-        left: -5%;
-        right: auto;
-        top: -20%;
-      }
-      @media (max-width: 340px) {
-        left: -25%;
-        transform: scale(0.5);
-      }
+			@media (max-width: 520px) {
+				left: -5%;
+				right: auto;
+				top: -20%;
+			}
+			@media (max-width: 340px) {
+				left: -25%;
+				transform: scale(0.5);
+			}
 
-      .bi-stick {
-        position: absolute;
-        top: 50%;
-        display: block;
-        width: 350px;
-        height: 1px;
-        @include backGreen;
+			.bi-stick {
+				position: absolute;
+				top: 50%;
+				display: block;
+				width: 350px;
+				height: 1px;
+				@include backGreen;
 
-        @media (max-width: 750px) {
-          width: 200px;
-        }
-      }
-    }
+				@media (max-width: 750px) {
+					width: 200px;
+				}
+			}
+		}
 
-    .bi_social-net {
-      display: flex;
-      align-items: end;
-      justify-content: end;
-      gap: 30px;
+		.bi_social-net {
+			display: flex;
+			align-items: end;
+			justify-content: end;
+			gap: 30px;
 
-      @media (max-width: 1200px) {
-        gap: 15px;
-        align-items: start;
-      }
+			@media (max-width: 1200px) {
+				gap: 15px;
+				align-items: start;
+			}
 
-      .bi-icon {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
+			.bi-icon {
+				width: 40px;
+				height: 40px;
+				cursor: pointer;
 
-        @media (max-width: 750px) {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-  }
+				@media (max-width: 750px) {
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+	}
 }

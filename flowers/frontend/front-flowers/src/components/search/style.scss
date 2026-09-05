@@ -1,57 +1,57 @@
 @use '../../index.scss' as *;
 
-.search{
-    position: relative;
+.search {
+	position: relative;
 
-    .search-container{
-        text-transform: uppercase;
-        min-height: 50vh;
+	.search-container {
+		text-transform: uppercase;
+		min-height: 50vh;
 
-        .search-title{
-            margin-bottom: 50px;
-            font-size: 30px;
-            @include colorGreen;
-        }
+		.search-title {
+			margin-bottom: 50px;
+			font-size: 30px;
+			@include colorGreen;
+		}
 
-        .search-items{
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
+		.search-items {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 30px;
+		}
 
-        .search-no-find{
-            font-size: 20px;
-        }
+		.search-no-find {
+			font-size: 20px;
+		}
 
-        .search-to{
-            margin-top: 20px;
-            @include btn;
-        }
-    }
+		.search-to {
+			margin-top: 20px;
+			@include btn;
+		}
+	}
 
-    .common{
-        position: absolute;
-        z-index: -10;
-    }
+	.common {
+		position: absolute;
+		z-index: -10;
+	}
 
-    .green-top{
-        top: -5%;
-        left: -5%;
-    }
-    .pink-top{
-        top: 0;
-        right: -5%;
-        rotate: -20deg;
-    }
-    .green-bottom{
-        bottom: -10%;
-        right: -10%;
-        rotate: 30deg;
-    }
+	.green-top {
+		top: -5%;
+		left: -5%;
+	}
+	.pink-top {
+		top: 0;
+		right: 0;
+		rotate: 0;
+	}
+	.green-bottom {
+		bottom: -10%;
+		right: 5%;
+		rotate: 30deg;
+	}
 
-    .pink-bottom{
-        bottom: -5%;
-        left: -5%;
-    }
+	.pink-bottom {
+		bottom: -5%;
+		left: -5%;
+	}
 }

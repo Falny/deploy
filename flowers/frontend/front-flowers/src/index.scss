@@ -1,307 +1,306 @@
 * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  outline: none;
-  border: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	// outline: 1px solid red;
 }
 
 @mixin colorGreen {
-  color: #43ffd2;
+	color: #43ffd2;
 }
 
 @mixin familyCormorant {
-  color: #ffffff;
-  font-family: "Cormorant", sans-serif;
+	color: #ffffff;
+	font-family: 'Cormorant', sans-serif;
 }
 
 @mixin familyOswald {
-  color: #ffffff;
-  font-family: "Oswald", sans-serif;
+	color: #ffffff;
+	font-family: 'Oswald', sans-serif;
 }
 
 @mixin display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @mixin displayColumn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 @mixin displayMain {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 @mixin shadowZeroTwo {
-  background-color: rgba(0, 27, 27, 0.2);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-
+	background-color: rgba(0, 27, 27, 0.2);
+	border-radius: 10px;
+	backdrop-filter: blur(10px);
 }
 
 @mixin text {
-  font-weight: 300;
-  font-size: 18px;
-  letter-spacing: 1px;
+	font-weight: 300;
+	font-size: 18px;
+	letter-spacing: 1px;
 
-  @media (max-width: 1200px) {
-    font-size: 16px;
-  }
+	@media (max-width: 1200px) {
+		font-size: 16px;
+	}
 
-  @media (max-width: 700px) {
-    font-size: 14px;
-  }
-  @media (max-width: 390px) {
-    font-size: 12px;
-  }
+	@media (max-width: 700px) {
+		font-size: 14px;
+	}
+	@media (max-width: 390px) {
+		font-size: 12px;
+	}
 }
 
 @mixin insideText {
-  font-size: 14px;
-  letter-spacing: 1px;
-  font-weight: 300;
-  text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: 300;
+	text-transform: uppercase;
 
-  @media (max-width: 700px) {
-    font-size: 12px;
-  }
-  @media (max-width: 390px) {
-    font-size: 10px;
-  }
+	@media (max-width: 700px) {
+		font-size: 12px;
+	}
+	@media (max-width: 390px) {
+		font-size: 10px;
+	}
 }
 
 @mixin colorPink {
-  color: #d978ac;
+	color: #d978ac;
 }
 
 @mixin backPink {
-  background-color: #d978ac;
+	background-color: #d978ac;
 }
 
 @mixin backGreen {
-  background-color: #43ffd2;
+	background-color: #43ffd2;
 }
 
 @mixin backText {
-  color: rgba(66, 71, 71, 0.4);
-  font-size: 200px;
+	color: rgba(66, 71, 71, 0.4);
+	font-size: 200px;
 
-  @media (max-width: 1400px) {
-    font-size: 150px;
-  }
+	@media (max-width: 1400px) {
+		font-size: 150px;
+	}
 
-  @media (max-width: 900px) {
-    font-size: 100px;
-  }
-  @media (max-width: 390px) {
-    font-size: 80px;
-  }
+	@media (max-width: 900px) {
+		font-size: 100px;
+	}
+	@media (max-width: 390px) {
+		font-size: 80px;
+	}
 }
 
 @mixin btn {
-  width: 255px;
-  padding: 16px;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #000;
-  letter-spacing: 1px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s;
-  @include familyOswald;
-  @include backGreen;
+	width: 255px;
+	padding: 16px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #000;
+	letter-spacing: 1px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.3s;
+	@include familyOswald;
+	@include backGreen;
 
-  &:hover {
-    background-color: #3cc4a4;
-  }
+	&:hover {
+		background-color: #3cc4a4;
+	}
 
-  @media (max-width: 700px) {
-    font-size: 10px;
-  }
+	@media (max-width: 700px) {
+		font-size: 10px;
+	}
 }
 
 @mixin policy {
-  max-width: 340px;
-  font-size: 12px;
-  color: #fff;
+	max-width: 340px;
+	font-size: 12px;
+	color: #fff;
 
-  a {
-    text-decoration: underline;
-    @include colorPink;
-  }
+	a {
+		text-decoration: underline;
+		@include colorPink;
+	}
 }
 
 @mixin stick {
-  display: block;
-  width: 255px;
-  height: 1px;
-  @include backPink;
+	display: block;
+	width: 255px;
+	height: 1px;
+	@include backPink;
 
-  @media (max-width: 560px) {
-    width: 150px;
-  }
-  @media (max-width: 390px) {
-    width: 100px;
-  }
+	@media (max-width: 560px) {
+		width: 150px;
+	}
+	@media (max-width: 390px) {
+		width: 100px;
+	}
 }
 
 body {
-  background-color: #040a0a;
-  color: #ffffff;
-  font-family: "Oswald", sans-serif;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  user-select: none;
+	background-color: #040a0a;
+	color: #ffffff;
+	font-family: 'Oswald', sans-serif;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	user-select: none;
 }
 
 .container {
-  margin: 0 165px;
+	margin: 0 165px;
 
-  @media (max-width: 1400px) {
-    margin: 0 130px;
-  }
-  @media (max-width: 1280px) {
-    margin: 0 50px;
-  }
-  @media (max-width: 750px) {
-    margin: 0 20px;
-  }
+	@media (max-width: 1400px) {
+		margin: 0 130px;
+	}
+	@media (max-width: 1280px) {
+		margin: 0 50px;
+	}
+	@media (max-width: 750px) {
+		margin: 0 20px;
+	}
 }
 
 .light-pink {
-  width: 707px;
-  height: 237px;
-  background-color: #7d2253;
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(110px);
-  z-index: -1;
+	width: 707px;
+	height: 237px;
+	background-color: #7d2253;
+	position: absolute;
+	border-radius: 50%;
+	filter: blur(110px);
+	z-index: -1;
 
-  @media (max-width: 1500px) {
-    width: 507px;
-    height: 157px;
-    filter: blur(100px);
-  }
+	@media (max-width: 1500px) {
+		width: 507px;
+		height: 157px;
+		filter: blur(100px);
+	}
 
-  @media (max-width: 1200px) {
-    width: 300px;
-    height: 100px;
-    filter: blur(70px);
-  }
-  @media (max-width: 390px) {
-    width: 100px;
-    height: 100px;
-    filter: blur(40px);
-  }
+	@media (max-width: 1200px) {
+		width: 300px;
+		height: 100px;
+		filter: blur(70px);
+	}
+	@media (max-width: 390px) {
+		width: 100px;
+		height: 100px;
+		filter: blur(40px);
+	}
 }
 
 .light-green {
-  width: 800px;
-  height: 200px;
-  background-color: #43ffd2;
-  border-radius: 50%;
-  filter: blur(110px);
-  z-index: -1;
+	width: 800px;
+	height: 200px;
+	background-color: #43ffd2;
+	border-radius: 50%;
+	filter: blur(110px);
+	z-index: -1;
 
-  @media (max-width: 1500px) {
-    width: 400px;
-    height: 157px;
-    filter: blur(100px);
-  }
+	@media (max-width: 1500px) {
+		width: 400px;
+		height: 157px;
+		filter: blur(100px);
+	}
 
-  @media (max-width: 1200px) {
-    width: 300px;
-    height: 100px;
-    filter: blur(70px);
-  }
+	@media (max-width: 1200px) {
+		width: 300px;
+		height: 100px;
+		filter: blur(70px);
+	}
 
-  @media (max-width: 390px) {
-    width: 100px;
-    height: 50px;
-    filter: blur(40px);
-  }
+	@media (max-width: 390px) {
+		width: 100px;
+		height: 50px;
+		filter: blur(40px);
+	}
 }
 
 .mini-light-pink {
-  width: 400px;
-  height: 200px;
-  background-color: #7d2253;
-  border-radius: 50%;
-  filter: blur(110px);
-  z-index: -1;
+	width: 400px;
+	height: 200px;
+	background-color: #7d2253;
+	border-radius: 50%;
+	filter: blur(110px);
+	z-index: -1;
 
-  @media (max-width: 930px) {
-    width: 200px;
-    height: 100px;
-    filter: blur(60px);
-  }
+	@media (max-width: 930px) {
+		width: 200px;
+		height: 100px;
+		filter: blur(60px);
+	}
 }
 
 .mini-light-green {
-  width: 400px;
-  height: 200px;
-  background-color: #43ffd2;
-  border-radius: 50%;
-  filter: blur(110px);
-  z-index: -1;
+	width: 400px;
+	height: 200px;
+	background-color: #43ffd2;
+	border-radius: 50%;
+	filter: blur(110px);
+	z-index: -1;
 
-  @media (max-width: 930px) {
-    width: 200px;
-    height: 100px;
-    filter: blur(60px);
-  }
+	@media (max-width: 930px) {
+		width: 200px;
+		height: 100px;
+		filter: blur(60px);
+	}
 }
 
 .title {
-  font-size: 100px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 300;
-  @include familyCormorant;
+	font-size: 100px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 300;
+	@include familyCormorant;
 
-  @media (max-width: 1185px) {
-    font-size: 90px;
-  }
+	@media (max-width: 1185px) {
+		font-size: 90px;
+	}
 
-  @media (max-width: 970px) {
-    font-size: 70px;
-  }
-  @media (max-width: 700px) {
-    font-size: 50px;
-  }
-  @media (max-width: 390px) {
-    font-size: 40px;
-  }
-  @media (max-width: 320px) {
-    font-size: 34px;
-  }
+	@media (max-width: 970px) {
+		font-size: 70px;
+	}
+	@media (max-width: 700px) {
+		font-size: 50px;
+	}
+	@media (max-width: 390px) {
+		font-size: 40px;
+	}
+	@media (max-width: 320px) {
+		font-size: 34px;
+	}
 }
 
 // это для плашки с инфо на главной и в каталоге
 .catalog-position {
-  position: absolute;
-  top: 20px;
-  right: 2%;
+	position: absolute;
+	top: 20px;
+	right: 2%;
 
-  @media (max-width: 1030px) {
-    display: none;
-  }
+	@media (max-width: 1030px) {
+		display: none;
+	}
 
-  .info-order_networking {
-    margin: 30px 0 100px;
-  }
+	.info-order_networking {
+		margin: 30px 0 100px;
+	}
 }
 
 .user-select {
-  user-select: text;
+	user-select: text;
 }

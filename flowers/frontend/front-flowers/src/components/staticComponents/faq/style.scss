@@ -1,148 +1,156 @@
-@use "../../../index.scss" as *;
+@use '../../../index.scss' as *;
 
 .faq {
-    background-image: url('../../../assets/faq/blue-rose-left.png'), url('../../../assets/faq/blue-rose-right.png');
-    background-repeat: no-repeat;
-    background-position: top left, top right;
-    position: relative;
-    min-height: 130vh;
+	background-image:
+		url('../../../assets/faq/blue-rose-left.png'),
+		url('../../../assets/faq/blue-rose-right.png');
+	background-repeat: no-repeat;
+	background-position:
+		top left,
+		top right;
+	position: relative;
+	min-height: 130vh;
 
-  .faq-title {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+	.faq-title {
+		display: flex;
+		align-items: center;
+		gap: 30px;
 
-    .faq-stick {
-      width: 65px;
-      height: 1px;
-      @include backGreen;
-    }
-  }
+		.faq-stick {
+			width: 65px;
+			height: 1px;
+			@include backGreen;
+		}
+	}
 
-  .faq-accardion {
-    margin-top: 40px;
-    max-width: 850px;
+	.faq-accardion {
+		margin-top: 40px;
+		max-width: 850px;
 
-    .faq-block {
-      border: 1px solid #43ffd2;
-      padding: 20px;
-      position: relative;
-      font-size: 20px;
+		.faq-block {
+			border: 1px solid #43ffd2;
+			padding: 20px;
+			position: relative;
+			font-size: 20px;
 
-      @media (max-width: 1000px) {
-        font-size: 18px;
-      }
+			@media (max-width: 1000px) {
+				font-size: 18px;
+			}
 
-      @media (max-width: 400px) {
-        font-size: 14px;
-      }
+			@media (max-width: 400px) {
+				font-size: 14px;
+			}
 
-      .faq-close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        padding: 20px;
-      }
+			.faq-close {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				cursor: pointer;
+				padding: 20px;
+			}
 
-      .faq-close:after {
-        content: "";
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 15px;
-        height: 1px;
-        @include backGreen;
-      }
+			.faq-close:after {
+				content: '';
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				width: 15px;
+				height: 1px;
+				@include backGreen;
+			}
 
-      .faq-open {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        padding: 20px;
-      }
+			.faq-open {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				cursor: pointer;
+				padding: 20px;
+			}
 
-      .faq-open::after {
-        content: "";
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 15px;
-        height: 1px;
-        @include backGreen;
-      }
+			.faq-open::after {
+				content: '';
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				width: 15px;
+				height: 1px;
+				@include backGreen;
+			}
 
-      .faq-open::before {
-        content: "";
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        width: 15px;
-        height: 1px;
-        rotate: 90deg;
-        @include backGreen;
-      }
+			.faq-open::before {
+				content: '';
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				width: 15px;
+				height: 1px;
+				rotate: 90deg;
+				@include backGreen;
+			}
 
-      .faq-block-title {
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        @include colorGreen;
+			.faq-block-title {
+				text-transform: uppercase;
+				margin-bottom: 20px;
+				@include colorGreen;
 
-        @media (max-width: 550px) {
-          margin-bottom: 10px;
-        }
+				@media (max-width: 550px) {
+					margin-bottom: 10px;
+				}
+			}
 
-      }
+			.faq-block-text {
+				line-height: 30px;
+				font-weight: 300;
 
-      .faq-block-text {
-        line-height: 30px;
-        font-weight: 300;
+				@media (max-width: 550px) {
+					line-height: 20px;
+				}
+			}
 
-        @media (max-width: 550px) {
-          line-height: 20px;
-        }
-      }
+			.faq-block-text-unvis {
+				display: none;
+			}
+		}
 
-      .faq-block-text-unvis {
-        display: none;
-      }
-    }
+		.faq-block + .faq-block {
+			margin-top: 10px;
+		}
+	}
 
-    .faq-block + .faq-block {
-      margin-top: 10px;
-    }
-  }
+	.light-blue {
+		width: 400px;
+		height: 300px;
+		background-color: #3d5279;
+		filter: blur(100px);
+		z-index: -1;
 
-  .light-blue{
-    width: 400px;
-    height: 300px;
-    background-color: #3D5279;
-    filter: blur(100px);
-    z-index: -1;
-  }
+		@media (max-width: 400px) {
+			width: 18rem;
+			height: 18rem;
+		}
+	}
 
-  .faq-light-top-left{
-    position: absolute;
-    top: 0;
-    left: -10%;
-  }
+	.faq-light-top-left {
+		position: absolute;
+		top: 0;
+		left: -10%;
+	}
 
-  .faq-light-top-right{
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+	.faq-light-top-right {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
 
-  .faq-light-bottom-left{
-    position: absolute;
-    bottom: 0;
-    left: -10%;
-  }
+	.faq-light-bottom-left {
+		position: absolute;
+		bottom: 0;
+		left: -10%;
+	}
 
-  .faq-light-bottom-right{
-    position: absolute;
-    bottom: -15%;
-    right: -10%;
-  }
+	.faq-light-bottom-right {
+		position: absolute;
+		bottom: -15%;
+		right: 0;
+	}
 }
